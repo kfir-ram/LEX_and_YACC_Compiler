@@ -12,22 +12,17 @@
 %left PLUS MINUS
 %left MULTIPLY DIVIDED
 %%
-S:			exp {printf("OK\n");
+program:	exp {printf("OK\n");
 			printf("the answer is: %d\n", $1);}
 			|code {printf("(CODE\n");}
 
-exp:		exp PLUS exp {$$=$1 + $3;
-			printf("I'M DOING PLUS\n");}|
-			exp MINUS exp {$$=$1 - $3;
-			printf("I'M DOING MINUS\n");}|
-			exp MULTIPLY exp {$$=$1 * $3;
-			printf("I'M DOING MUL\n");}|
-			exp DIVIDED exp {$$=$1 / $3;
-			printf("I'M DOING DIVIDE\n");}|
-			NUM {$$=$1;
-			printf("I'M a number, and the number is: %d \n", $1);};
+exp:		exp PLUS exp {printf("I'M DOING PLUS\n");}
+			|exp MINUS exp {printf("I'M DOING MINUS\n");}
+			|exp MULTIPLY exp {printf("I'M DOING MUL\n");}
+			|exp DIVIDED exp {printf("I'M DOING DIVIDE\n");}
+			|literal {printf("I'M a number, and the number is: %d \n");};
 
-code:		FUNCTION func_type id LP parameter_list RP SCB fuc_body ECB { printf("(FUNCTION\n");}
+code:		FUNCTION func_type id LP parameter_list RP SCB func_body ECB { printf("(FUNCTION\n");}
 
 func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
 			|TYPE_INT 	{printf("(TYPE INT)\n");}
@@ -54,10 +49,13 @@ literal:	NUM {printf("literal NUM\n");}
 			|CHAR {printf("literal CHAR\n")}
 			|STRING {printf("literal STRING\n");}
 			|EMPTY_STRING {printf("literal EMPTY_STRING\n");}
-			|ID {printf("literal ID");}
+			|ID {printf("literal ID\n");}
+			|exp {printf("I'M exp literal\n");}
 
 
-ifelse:		IF LP bool_statment RP SCB body ECB {printf("I'M a if statment\n");}
+ifelse:		IF LP bool_statment RP SCB func_body ECB {printf("I'M a if statment\n");}
+			|ELSE SCB func_body ECB {printf("I'M a else statment\n");}
+
 
 bool_statment:	id EQUALIVATION literal {printf("EQUALIVATION on if\n");}
 				|id NOTEQUAL literal {printf("NOTEQUAL on if\n");}
@@ -76,7 +74,9 @@ type:		TYPE_INT 	{printf("(TYPE__INT)\n");}
 			|TYPE_CHAR 	{printf("(TYPE__CHAR)\n")}
 			|TYPE_REAL 	{printf("(TYPE__REAL)\n");}
 
-parameter_list:	type id {printf("I'M a parameter list\n");}
+parameter_list:	type id EOS parameter_list {printf("I'M a parameter list\n");}
+				|type id {printf("I'M the second parameter list\n");}
+				|;
 
 %%
 

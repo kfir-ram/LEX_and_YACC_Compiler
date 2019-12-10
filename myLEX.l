@@ -14,32 +14,29 @@
 "bool"		{return TYPE_BOOL;}
 "string"	{return TYPE_STRING;}
 "char"		{return TYPE_CHAR;}	
-"int *"|"int* "		{return TYPE_INT*;}//pointer
-"char *"|"char* "	{return TYPE_CHAR*;}//pointer
-"resl *"|"real* "	{return TYPE_REAL*;}//pointer
+"int *"|"int* "		{return TYPE_P_INT;}
+"char *"|"char* "	{return TYPE_P_CHAR;}//pointer
+"resl *"|"real* "	{return TYPE_P_REAL;}//pointer
 "if"		{return IF;}
 "else"		{return ELSE;}
 "while" 	{return WHILE;}
-"for"		{returm FOR;}
+"for"		{return FOR;}
 "do"		{return DO;}
 "var"		{return VAR;}
 "return"	{return RETURN;}
 "true"		{return TRUE;}
 "false"		{return FALSE;}
 "null"		{return NULL;}
-
 "&&"		{return AND;}
 "||"		{return OR;}
 "=="		{return EQUALIVATION;}
 "!="		{return NOTEQUAL;}
-
 "++"		{return PLUSONE;}
 "--"		{return MINUSONE;}
-
-">="		{reutrn BIGGER_EQ;}
-"<="		{reutrn SMALLER_EQ;}
-">"			{reutrn BIGGER;}
-"<"			{reutrn SMALLER;}
+">="		{return BIGGER_EQ;}
+"<="		{return SMALLER_EQ;}
+">"			{return BIGGER;}
+"<"			{return SMALLER;}
 "/"			{return DIVIDED;}
 "="			{return EQUAL;}
 "+"			{return PLUS;}
@@ -47,8 +44,6 @@
 "*"			{return MULTIPLY;}
 "!"			{return NOT;}
 "&"			{return ADDRESS_OF;}
-
-""
 "{"			{return SCB;}//Start Code Block
 "}"			{return ECB;}//End Code Block
 "("			{return LP;}//Left Parameter
@@ -64,8 +59,8 @@
 \*\*[a-zA-Z]+[a-zA-Z0-9_]*	{return ILLEGAL_POINTER;}
 \*[a-zA-Z]+[a-zA-Z0-9_]*	{return POINTER;}
 
-\'[a-z]\'	{return CHAR_lowercase yytext;}///////not shore need a check!!!!
-\'[A-Z]\'	{return CHAR_uppercase $$;}///////////not shore need a check!!!!
+\'[a-z]\'	{return CHAR_lowercase;}//not shore need a check!!!!
+\'[A-Z]\'	{return CHAR_uppercase;}//not shore need a check!!!!
 \'.\'		{return CHAR;}
 
 \"(.["]|["].|.["].)+\"	{return INVALID_STRING;}

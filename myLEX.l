@@ -2,10 +2,13 @@
  //Kfir Rahamim 203426721
  //Hen Dahan 312585953	
  //Bar Piglanski 204590384
-
+%{
+extern int yylineno;
+%}
+%option yylineno
 %%
-"/*.*/"		{return COMMENTS;}
-"//"		{return ILLEGAL_COMMENT;}
+\/\*.*[\n]*.*\*\/		{return COMMENTS;}
+\/\/		{return ILLEGAL_COMMENT;}
 ";"			{return EOS;}//End Of Statement
 "function"	{return FUNCTION;}
 "void"		{return TYPE_VOID;}
@@ -63,16 +66,16 @@
 \'[A-Z]\'	{return CHAR_uppercase;}//not shore need a check!!!!
 \'.\'		{return CHAR;}
 
-\"(.["]|["].|.["].)+\"	{return INVALID_STRING;}
-\".\"		{return STRING;}
+\"(.*["]|["].*|.*["].*)+\"	{return INVALID_STRING;}
+\".*\"		{return STRING;}
 \"\"		{return EMPTY_STRING;}
 
 
 
 
 [-]?[1-9][0-9]*|0	{return DEC_INT;}
-[0x|0X][0-9ABCDEF]*	{return HEX_INT;}
-[-]?[0-9]+\.?[0-9]*	{return REAL;}
+(0x|0X)[0-9ABCDEF]+	{return HEX_INT;}
+[-|+]?[0-9]*\.?[0-9]*([E]|[e])?[-|+]?([0-9]+)?	{return REAL;}
 
 
 [ \t\n]			;//ignores tab and spaces.

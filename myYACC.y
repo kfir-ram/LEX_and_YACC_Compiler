@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+extern int yylex();
+extern int yylineno;
 %}
 %token FUNCTION, TYPE_BOOL, TYPE_STRING, TYPE_VOID
 %token TYPE_INT, TYPE_CHAR, TYPE_REAL, TYPE_P_INT, TYPE_P_CHAR, TYPE_P_REAL
@@ -23,7 +25,7 @@ exp:		exp PLUS exp {printf("I'M DOING PLUS\n");}
 			|literal {printf("I'M a literal \n");};
 
 
-code:		FUNCTION func_type id LP parameter_list RP SCB func_body ECB code { printf("(FUNCTION\n");}
+code:		comments FUNCTION func_type id LP parameter_list RP SCB func_body ECB code { printf("(FUNCTION\n");}
 			|;
 
 func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
@@ -37,16 +39,22 @@ func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
 func_body:	body return {printf("I'M a function body\n");}
 			|code {printf("function inside a function\n");}
 
-body:		type id EQUAL literal EOS body {printf("I'M a EQUAL body\n")};
-			|type id EOS body {printf("I'M a decleration body\n");}
+
+body:		type_string EOS body {printf("I'M a type_string body\n");}
+			|VAR type id EQUAL literal body EOS body {printf("I'M a EQUAL body\n");}
+			|VAR type id EOS body {printf("I'M a decleration body\n");}
 			|ifelse body {printf("I'M if body\n");}
+			|COMMA id EQUAL literal body {printf("I'M y=23 body \n");}
+			|COMMA id body {printf("I'M ,t body \n");}
 			|id EQUAL exp EOS body {printf("I'M body EXP\n");}
-			|func_body {printf("func_body in body\n");}
+			|loop body {printf("I'M body loop\n");}
+			|ID {printf("I'M body ID\n");}
+			|COMMENTS body {printf("im a comment\n");}
 			|;
 
-literal:	NUM {printf("literal NUM\n");}
+literal:	HEX_INT {printf("literal HEX_INT\n");}
 			|DEC_INT {printf("literal DEC_INT\n");}
-			|HEX_INT {printf("literal HEX_INT\n");}
+			|NUM {printf("literal NUM\n");}
 			|REAL {printf("literal REAL\n");}
 			|CHAR_lowercase {printf("literal CHAR_lowercase\n");}
 			|CHAR_uppercase {printf("literal CHAR_uppercase\n");}
@@ -58,7 +66,9 @@ literal:	NUM {printf("literal NUM\n");}
 
 
 ifelse:		IF LP bool_statment RP SCB func_body ECB {printf("I'M a if statment\n");}
+			|IF LP bool_statment RP {printf("I'M a if statment without block\n");}
 			|ELSE SCB func_body ECB {printf("I'M a else statment\n");}
+			|ELSE {printf("I'M a ELSE statment without block\n");}
 
 
 bool_statment:	id EQUALIVATION literal {printf("EQUALIVATION on if\n");}
@@ -77,24 +87,52 @@ id: 		id COMMA id {printf("I found 2 id's\n");}
 type:		TYPE_INT 	{printf("(TYPE__INT)\n");}
 			|TYPE_CHAR 	{printf("(TYPE__CHAR)\n")}
 			|TYPE_REAL 	{printf("(TYPE__REAL)\n");}
+			|type_string	{printf("(TYPE__STRING)\n");}
+			|TYPE_BOOL		{printf("(TYPE__BOOL)\n");}
+			|TYPE_P_INT		{printf("(TYPE__INT*)\n");}
+			|TYPE_P_CHAR	{printf("(TYPE__char*)\n");}
+			|TYPE_P_REAL	{printf("(TYPE__REAL*)\n");}
+			
+
 
 parameter_list:	type id EOS parameter_list {printf("I'M a parameter list\n");}
 				|type id {printf("I'M the second parameter list\n");}
 				|;
 
 
-return:			RETURN literal EOS {printf("RETURN-----\n");}
+return:		RETURN literal EOS {printf("RETURN-----\n");}
+			|;
+
+loop:		WHILE LP bool_statment RP SCB body ECB {printf("i'm while loop\n");}
+			|FOR LP loop_body EOS bool_statment EOS inc_dec RP SCB body ECB {printf("i'm FOR loop\n");}
+			|DO SCB body ECB WHILE LP bool_statment RP EOS {printf("i'm DO WHILE loop\n");}
+
+loop_body:	type ID EQUAL literal
+			|ID EQUAL literal
+			|ID
+
+inc_dec:	ID PLUSONE {printf("i++\n");}
+			|PLUSONE ID {printf("++i\n");}
+			|ID MINUSONE {printf("i--\n");}
+			|MINUSONE ID {printf("--i\n");}
+
+comments:	COMMENTS
+			|;
+
+type_string:	TYPE_STRING ID BSI NUM ESI type_string {printf("type string 1111\n");}
+				|COMMA ID BSI NUM ESI type_string {printf("type string 22222\n");}
 				|;
-
-
 %%
 
 #include "lex.yy.c"
 main() {return yyparse();}
 
-int yyerror(char *msg){
-	printf("Error: located in token %s\n", yytext);
-	return 0;}
+int yyerror(){
+ 	fflush(stdout);
+ 	fprintf(stderr, "------------------------------------------------------\nError located in line: %d\n", yylineno);
+	fprintf(stderr, "The parser can not accept: \" %s \" .\n",yytext);
+	return 0;
+}
 
 
 int yywrap(){

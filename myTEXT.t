@@ -1,9 +1,20 @@
 
-function int foo(int i, j, k)
-{
-	function bool fee(int l, m, n; real x, y)
+function void foo (int x) {
+
+	if(x == 0)
+		var int d=0,v;
+	else
+		string a[32],c[3],t[56];
+	var real t =0.9;
+
+	if(x == 0)
 	{
-		return true;
+		var int d=0,v;
 	}
-	return 0;
-}
+	else
+	{
+		string a[32],c[3],t[56];
+	}
+
+
+	}

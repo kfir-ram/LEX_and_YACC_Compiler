@@ -20,9 +20,11 @@ exp:		exp PLUS exp {printf("I'M DOING PLUS\n");}
 			|exp MINUS exp {printf("I'M DOING MINUS\n");}
 			|exp MULTIPLY exp {printf("I'M DOING MUL\n");}
 			|exp DIVIDED exp {printf("I'M DOING DIVIDE\n");}
-			|literal {printf("I'M a number, and the number is: %d \n");};
+			|literal {printf("I'M a literal \n");};
 
-code:		FUNCTION func_type id LP parameter_list RP SCB func_body ECB { printf("(FUNCTION\n");}
+
+code:		FUNCTION func_type id LP parameter_list RP SCB func_body ECB code { printf("(FUNCTION\n");}
+			|;
 
 func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
 			|TYPE_INT 	{printf("(TYPE INT)\n");}
@@ -32,12 +34,14 @@ func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
 			|TYPE_P_REAL {printf("(TYPE REAL pointer)\n");}
 			|TYPE_P_CHAR {printf("(TYPE CHAR pointer)\n");}
 
-func_body:	body RETURN literal EOS {printf("I'M a function body\n");}
+func_body:	body return {printf("I'M a function body\n");}
 			|code {printf("function inside a function\n");}
 
-body:		type id EQUAL literal EOS body {printf("I'M a EQUAL body\n");}
-			|type id EOS body{printf("I'M a decleration body\n");}
-			|ifelse body{printf("I'M if body\n");}
+body:		type id EQUAL literal EOS body {printf("I'M a EQUAL body\n")};
+			|type id EOS body {printf("I'M a decleration body\n");}
+			|ifelse body {printf("I'M if body\n");}
+			|id EQUAL exp EOS body {printf("I'M body EXP\n");}
+			|func_body {printf("func_body in body\n");}
 			|;
 
 literal:	NUM {printf("literal NUM\n");}
@@ -50,7 +54,7 @@ literal:	NUM {printf("literal NUM\n");}
 			|STRING {printf("literal STRING\n");}
 			|EMPTY_STRING {printf("literal EMPTY_STRING\n");}
 			|ID {printf("literal ID\n");}
-			|exp {printf("I'M exp literal\n");}
+			
 
 
 ifelse:		IF LP bool_statment RP SCB func_body ECB {printf("I'M a if statment\n");}
@@ -77,6 +81,11 @@ type:		TYPE_INT 	{printf("(TYPE__INT)\n");}
 parameter_list:	type id EOS parameter_list {printf("I'M a parameter list\n");}
 				|type id {printf("I'M the second parameter list\n");}
 				|;
+
+
+return:			RETURN literal EOS {printf("RETURN-----\n");}
+				|;
+
 
 %%
 

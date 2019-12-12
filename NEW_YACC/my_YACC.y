@@ -23,12 +23,21 @@ extern int yylineno;
 
 main_program:	code main_func {printf("program: code MAIN\n");}
 
-main_func:		FUNCTION func_type MAIN LP parameter_list RP SCB func_body return ECB
+main_func:		FUNCTION VOID MAIN LP parameter_list RP SCB func_body ECB
 
-args:		id COMMA args 	{$$ = make_two_nodes($1, $3, NULL);}
-			|id 			{$$ = make_two_nodes($1, NULL, NULL);}
+code: 			code comments function {printf("code commenst function\n");}
+				|code comments void_function {printf("code commenst void_function\n");}
+				|;
 
-id: 		ID {$$ = strdup(yytext);}
+void_function:	FUNCTION VOID id LP parameter_list RP SCB func_body ECB
+
+function:		FUNCTION type id LP parameter_list RP SCB func_body return ECB
+
+code_block: 	SCB var_dec body ECB {printf("block:SCB body ECB");}
+
+args:		ID COMMA args 	{printf("args:ID COMMA args\n");}
+			|ID			{printf("args:ID\n");}
+
 			
 
 parameter_list:	type args EOS parameter_list 
@@ -60,6 +69,7 @@ literal:	id {printf("literal:id\n");}
 			|char {printf("literal:char\n");}
 			|STRING {printf("literal:STRING\n");}
 			|EMPTY_STRING {printf("literal:EMPTY_STRING\n");}
+			|NULL	{printf("literal:NULL\n");}
 
 bool:		TRUE {printf("bool:TRUE\n");}
 			|FALSE {printf("bool:FALSE\n");}
@@ -76,22 +86,12 @@ number:			DEC_INT {printf("number:DEC_INT\n");}
 				|HEX_INT {printf("number:HEX_INT\n");}
 				|REAL {printf("number:REAL\n");}
 
-code: 			code comments function {printf("code commenst function\n");}
-				|code comments void_function {printf("code commenst void_function\n");}
-				|;
-
-void_function:	FUNCTION VOID id LP parameter_list RP SCB func_body ECB
-
-function:		FUNCTION type id LP parameter_list RP SCB func_body return ECB
-
-
-code_block: 	SCB var_dec body ECB {printf("block:SCB body ECB");}
 
 var_dec:		var_dec premitive_dec {printf("var_dec:var_dec premitive_dec");}
 				|var_dec string_dec {printf("var_dec:var_dec string_dec");}
 				|;
 
-premitive_dec:			VAR type premitive_assign_op EOS {printf("var_dec:VAR type id EOS");}
+premitive_dec:	VAR type premitive_assign_op EOS {printf("var_dec:VAR type id EOS");}
 
 
 string_dec:		TYPE_STRING string_assign_op EOS {printf("string_dec:TYPE_STRING string_assign_op EOS\n");}
@@ -115,10 +115,9 @@ string:			STRING
 
 
 
-body:			body 
-				|body string_type {printf("block:SCB body ECB");}
+body:			body body_ 
+				|body_ {printf("block:SCB body ECB");}
 
-body_:
 
 string_type:	
 
@@ -130,9 +129,38 @@ type:			TYPE_INT 	{printf("(TYPE__INT)\n");}
 				|TYPE_P_CHAR	{printf("(TYPE__char*)\n");}
 				|TYPE_P_REAL	{printf("(TYPE__REAL*)\n");}
 
-id:
 
-func_body:	body {printf("func_body body\n");}
+func_body:	body {printf("func_body body\n");}//----todo---we dont need that
 
 
-return:
+return:		RETURN literal 
+
+body_:		ifelse {printf("body_:ifelse\n")}
+			|for {printf("body_:for\n")}
+			|do_while {printf("body_:do_while\n")}
+			|while {printf("body_:while\n")}
+			|function {printf("body_:function\n")}
+			|void_function {printf("body_:void_function\n")}
+			|function_call {printf("body_:function_call\n")}
+			|;
+
+ifelse:			IF LP exp RP SCB body ECB {printf("if:IF LP exp RP SCB body ECB \n");}
+			|IF LP exp RP body {printf("if:IF LP exp RP body\n");}
+			|ELSE SCB body ECB {printf("if:ELSE SCB body ECB\n");}
+			|ELSE body {printf("if:ELSE body\n");}
+
+loop:		WHILE LP exp RP SCB body ECB {printf("i'm while loop\n");}
+			|for_loop {printf("loop: for_loop\n");}
+			|DO SCB body ECB WHILE LP exp RP EOS {printf("loop:DO SCB body ECB WHILE LP exp RP EOS\n");}
+
+for_loop:	FOR LP loop_i_dec EOS exp EOS inc_dec RP SCB body ECB
+
+inc_dec:	ID PLUSONE {printf("i++\n");}
+			|PLUSONE ID {printf("++i\n");}
+			|ID MINUSONE {printf("i--\n");}
+			|MINUSONE ID {printf("--i\n");}
+
+loop_i_dec: INT ID EQUAL DEC_INT {printf("loop_i_dec: INT ID EQUAL DEC_INT\n");}
+			|ID EQUAL DEC_INT {printf("loop_i_dec:ID EQUAL DEC_INT\n");}
+			|ID {printf("loop_i_dec: ID\n");}
+

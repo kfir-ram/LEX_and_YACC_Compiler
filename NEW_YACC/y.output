@@ -1,0 +1,3765 @@
+Useless nonterminals:
+
+   number
+   string_type
+   assignment_statment
+   var_type
+
+
+Terminals which are not used:
+
+   ILLEGAL_COMMENT
+   DLOS
+   ILLEGAL_POINTER
+   POINTER
+   INVALID_STRING
+
+
+Useless rules:
+
+#55    number :	 DEC_INT;
+#56    number :	 HEX_INT;
+#57    number :	 REAL;
+#75    string_type :	;
+#85    assignment_statment :	 var_type EQUAL exp;
+#86    var_type :	 id;
+#87    var_type :	 pointer_id;
+#88    var_type :	 id BSI exp ESI;
+
+
+Conflict in state 120 between rule 38 and token AND resolved as shift.
+Conflict in state 120 between rule 38 and token OR resolved as shift.
+Conflict in state 120 between rule 38 and token EQUALIVATION resolved as reduce.
+Conflict in state 120 between rule 38 and token NOTEQUAL resolved as reduce.
+Conflict in state 120 between rule 38 and token BIGGER_EQ resolved as reduce.
+Conflict in state 120 between rule 38 and token SMALLER_EQ resolved as reduce.
+Conflict in state 120 between rule 38 and token BIGGER resolved as reduce.
+Conflict in state 120 between rule 38 and token SMALLER resolved as reduce.
+Conflict in state 120 between rule 38 and token DIVIDED resolved as reduce.
+Conflict in state 120 between rule 38 and token PLUS resolved as reduce.
+Conflict in state 120 between rule 38 and token MINUS resolved as reduce.
+Conflict in state 120 between rule 38 and token MULTIPLY resolved as reduce.
+Conflict in state 121 between rule 33 and token AND resolved as reduce.
+Conflict in state 121 between rule 33 and token OR resolved as reduce.
+Conflict in state 121 between rule 33 and token EQUALIVATION resolved as reduce.
+Conflict in state 121 between rule 33 and token NOTEQUAL resolved as reduce.
+Conflict in state 121 between rule 33 and token BIGGER_EQ resolved as reduce.
+Conflict in state 121 between rule 33 and token SMALLER_EQ resolved as reduce.
+Conflict in state 121 between rule 33 and token BIGGER resolved as reduce.
+Conflict in state 121 between rule 33 and token SMALLER resolved as reduce.
+Conflict in state 121 between rule 33 and token DIVIDED resolved as reduce.
+Conflict in state 121 between rule 33 and token PLUS resolved as reduce.
+Conflict in state 121 between rule 33 and token MINUS resolved as reduce.
+Conflict in state 121 between rule 33 and token MULTIPLY resolved as reduce.
+Conflict in state 122 between rule 37 and token AND resolved as reduce.
+Conflict in state 122 between rule 37 and token OR resolved as reduce.
+Conflict in state 122 between rule 37 and token EQUALIVATION resolved as reduce.
+Conflict in state 122 between rule 37 and token NOTEQUAL resolved as reduce.
+Conflict in state 122 between rule 37 and token BIGGER_EQ resolved as reduce.
+Conflict in state 122 between rule 37 and token SMALLER_EQ resolved as reduce.
+Conflict in state 122 between rule 37 and token BIGGER resolved as reduce.
+Conflict in state 122 between rule 37 and token SMALLER resolved as reduce.
+Conflict in state 122 between rule 37 and token DIVIDED resolved as reduce.
+Conflict in state 122 between rule 37 and token PLUS resolved as reduce.
+Conflict in state 122 between rule 37 and token MINUS resolved as reduce.
+Conflict in state 122 between rule 37 and token MULTIPLY resolved as reduce.
+Conflict in state 149 between rule 31 and token AND resolved as reduce.
+Conflict in state 149 between rule 31 and token OR resolved as reduce.
+Conflict in state 149 between rule 31 and token EQUALIVATION resolved as reduce.
+Conflict in state 149 between rule 31 and token NOTEQUAL resolved as reduce.
+Conflict in state 149 between rule 31 and token BIGGER_EQ resolved as reduce.
+Conflict in state 149 between rule 31 and token SMALLER_EQ resolved as reduce.
+Conflict in state 149 between rule 31 and token BIGGER resolved as reduce.
+Conflict in state 149 between rule 31 and token SMALLER resolved as reduce.
+Conflict in state 149 between rule 31 and token DIVIDED resolved as reduce.
+Conflict in state 149 between rule 31 and token PLUS resolved as reduce.
+Conflict in state 149 between rule 31 and token MINUS resolved as reduce.
+Conflict in state 149 between rule 31 and token MULTIPLY resolved as reduce.
+Conflict in state 150 between rule 32 and token AND resolved as reduce.
+Conflict in state 150 between rule 32 and token OR resolved as reduce.
+Conflict in state 150 between rule 32 and token EQUALIVATION resolved as reduce.
+Conflict in state 150 between rule 32 and token NOTEQUAL resolved as reduce.
+Conflict in state 150 between rule 32 and token BIGGER_EQ resolved as reduce.
+Conflict in state 150 between rule 32 and token SMALLER_EQ resolved as reduce.
+Conflict in state 150 between rule 32 and token BIGGER resolved as reduce.
+Conflict in state 150 between rule 32 and token SMALLER resolved as reduce.
+Conflict in state 150 between rule 32 and token DIVIDED resolved as reduce.
+Conflict in state 150 between rule 32 and token PLUS resolved as reduce.
+Conflict in state 150 between rule 32 and token MINUS resolved as reduce.
+Conflict in state 150 between rule 32 and token MULTIPLY resolved as reduce.
+Conflict in state 151 between rule 25 and token AND resolved as shift.
+Conflict in state 151 between rule 25 and token OR resolved as shift.
+Conflict in state 151 between rule 25 and token EQUALIVATION resolved as reduce.
+Conflict in state 151 between rule 25 and token NOTEQUAL resolved as reduce.
+Conflict in state 151 between rule 25 and token BIGGER_EQ resolved as reduce.
+Conflict in state 151 between rule 25 and token SMALLER_EQ resolved as reduce.
+Conflict in state 151 between rule 25 and token BIGGER resolved as reduce.
+Conflict in state 151 between rule 25 and token SMALLER resolved as reduce.
+Conflict in state 151 between rule 25 and token DIVIDED resolved as shift.
+Conflict in state 151 between rule 25 and token PLUS resolved as shift.
+Conflict in state 151 between rule 25 and token MINUS resolved as shift.
+Conflict in state 151 between rule 25 and token MULTIPLY resolved as shift.
+Conflict in state 152 between rule 26 and token AND resolved as shift.
+Conflict in state 152 between rule 26 and token OR resolved as shift.
+Conflict in state 152 between rule 26 and token EQUALIVATION resolved as reduce.
+Conflict in state 152 between rule 26 and token NOTEQUAL resolved as reduce.
+Conflict in state 152 between rule 26 and token BIGGER_EQ resolved as reduce.
+Conflict in state 152 between rule 26 and token SMALLER_EQ resolved as reduce.
+Conflict in state 152 between rule 26 and token BIGGER resolved as reduce.
+Conflict in state 152 between rule 26 and token SMALLER resolved as reduce.
+Conflict in state 152 between rule 26 and token DIVIDED resolved as shift.
+Conflict in state 152 between rule 26 and token PLUS resolved as shift.
+Conflict in state 152 between rule 26 and token MINUS resolved as shift.
+Conflict in state 152 between rule 26 and token MULTIPLY resolved as shift.
+Conflict in state 153 between rule 22 and token AND resolved as shift.
+Conflict in state 153 between rule 22 and token OR resolved as shift.
+Conflict in state 153 between rule 22 and token EQUALIVATION resolved as reduce.
+Conflict in state 153 between rule 22 and token NOTEQUAL resolved as reduce.
+Conflict in state 153 between rule 22 and token BIGGER_EQ resolved as reduce.
+Conflict in state 153 between rule 22 and token SMALLER_EQ resolved as reduce.
+Conflict in state 153 between rule 22 and token BIGGER resolved as reduce.
+Conflict in state 153 between rule 22 and token SMALLER resolved as reduce.
+Conflict in state 153 between rule 22 and token DIVIDED resolved as shift.
+Conflict in state 153 between rule 22 and token PLUS resolved as shift.
+Conflict in state 153 between rule 22 and token MINUS resolved as shift.
+Conflict in state 153 between rule 22 and token MULTIPLY resolved as shift.
+Conflict in state 154 between rule 24 and token AND resolved as shift.
+Conflict in state 154 between rule 24 and token OR resolved as shift.
+Conflict in state 154 between rule 24 and token EQUALIVATION resolved as reduce.
+Conflict in state 154 between rule 24 and token NOTEQUAL resolved as reduce.
+Conflict in state 154 between rule 24 and token BIGGER_EQ resolved as reduce.
+Conflict in state 154 between rule 24 and token SMALLER_EQ resolved as reduce.
+Conflict in state 154 between rule 24 and token BIGGER resolved as reduce.
+Conflict in state 154 between rule 24 and token SMALLER resolved as reduce.
+Conflict in state 154 between rule 24 and token DIVIDED resolved as shift.
+Conflict in state 154 between rule 24 and token PLUS resolved as shift.
+Conflict in state 154 between rule 24 and token MINUS resolved as shift.
+Conflict in state 154 between rule 24 and token MULTIPLY resolved as shift.
+Conflict in state 155 between rule 21 and token AND resolved as shift.
+Conflict in state 155 between rule 21 and token OR resolved as shift.
+Conflict in state 155 between rule 21 and token EQUALIVATION resolved as reduce.
+Conflict in state 155 between rule 21 and token NOTEQUAL resolved as reduce.
+Conflict in state 155 between rule 21 and token BIGGER_EQ resolved as reduce.
+Conflict in state 155 between rule 21 and token SMALLER_EQ resolved as reduce.
+Conflict in state 155 between rule 21 and token BIGGER resolved as reduce.
+Conflict in state 155 between rule 21 and token SMALLER resolved as reduce.
+Conflict in state 155 between rule 21 and token DIVIDED resolved as shift.
+Conflict in state 155 between rule 21 and token PLUS resolved as shift.
+Conflict in state 155 between rule 21 and token MINUS resolved as shift.
+Conflict in state 155 between rule 21 and token MULTIPLY resolved as shift.
+Conflict in state 156 between rule 23 and token AND resolved as shift.
+Conflict in state 156 between rule 23 and token OR resolved as shift.
+Conflict in state 156 between rule 23 and token EQUALIVATION resolved as reduce.
+Conflict in state 156 between rule 23 and token NOTEQUAL resolved as reduce.
+Conflict in state 156 between rule 23 and token BIGGER_EQ resolved as reduce.
+Conflict in state 156 between rule 23 and token SMALLER_EQ resolved as reduce.
+Conflict in state 156 between rule 23 and token BIGGER resolved as reduce.
+Conflict in state 156 between rule 23 and token SMALLER resolved as reduce.
+Conflict in state 156 between rule 23 and token DIVIDED resolved as shift.
+Conflict in state 156 between rule 23 and token PLUS resolved as shift.
+Conflict in state 156 between rule 23 and token MINUS resolved as shift.
+Conflict in state 156 between rule 23 and token MULTIPLY resolved as shift.
+Conflict in state 157 between rule 30 and token AND resolved as shift.
+Conflict in state 157 between rule 30 and token OR resolved as shift.
+Conflict in state 157 between rule 30 and token EQUALIVATION resolved as reduce.
+Conflict in state 157 between rule 30 and token NOTEQUAL resolved as reduce.
+Conflict in state 157 between rule 30 and token BIGGER_EQ resolved as reduce.
+Conflict in state 157 between rule 30 and token SMALLER_EQ resolved as reduce.
+Conflict in state 157 between rule 30 and token BIGGER resolved as reduce.
+Conflict in state 157 between rule 30 and token SMALLER resolved as reduce.
+Conflict in state 157 between rule 30 and token DIVIDED resolved as reduce.
+Conflict in state 157 between rule 30 and token PLUS resolved as reduce.
+Conflict in state 157 between rule 30 and token MINUS resolved as reduce.
+Conflict in state 157 between rule 30 and token MULTIPLY resolved as reduce.
+Conflict in state 158 between rule 27 and token AND resolved as shift.
+Conflict in state 158 between rule 27 and token OR resolved as shift.
+Conflict in state 158 between rule 27 and token EQUALIVATION resolved as reduce.
+Conflict in state 158 between rule 27 and token NOTEQUAL resolved as reduce.
+Conflict in state 158 between rule 27 and token BIGGER_EQ resolved as reduce.
+Conflict in state 158 between rule 27 and token SMALLER_EQ resolved as reduce.
+Conflict in state 158 between rule 27 and token BIGGER resolved as reduce.
+Conflict in state 158 between rule 27 and token SMALLER resolved as reduce.
+Conflict in state 158 between rule 27 and token DIVIDED resolved as shift.
+Conflict in state 158 between rule 27 and token PLUS resolved as reduce.
+Conflict in state 158 between rule 27 and token MINUS resolved as reduce.
+Conflict in state 158 between rule 27 and token MULTIPLY resolved as shift.
+Conflict in state 159 between rule 28 and token AND resolved as shift.
+Conflict in state 159 between rule 28 and token OR resolved as shift.
+Conflict in state 159 between rule 28 and token EQUALIVATION resolved as reduce.
+Conflict in state 159 between rule 28 and token NOTEQUAL resolved as reduce.
+Conflict in state 159 between rule 28 and token BIGGER_EQ resolved as reduce.
+Conflict in state 159 between rule 28 and token SMALLER_EQ resolved as reduce.
+Conflict in state 159 between rule 28 and token BIGGER resolved as reduce.
+Conflict in state 159 between rule 28 and token SMALLER resolved as reduce.
+Conflict in state 159 between rule 28 and token DIVIDED resolved as shift.
+Conflict in state 159 between rule 28 and token PLUS resolved as reduce.
+Conflict in state 159 between rule 28 and token MINUS resolved as reduce.
+Conflict in state 159 between rule 28 and token MULTIPLY resolved as shift.
+Conflict in state 160 between rule 29 and token AND resolved as shift.
+Conflict in state 160 between rule 29 and token OR resolved as shift.
+Conflict in state 160 between rule 29 and token EQUALIVATION resolved as reduce.
+Conflict in state 160 between rule 29 and token NOTEQUAL resolved as reduce.
+Conflict in state 160 between rule 29 and token BIGGER_EQ resolved as reduce.
+Conflict in state 160 between rule 29 and token SMALLER_EQ resolved as reduce.
+Conflict in state 160 between rule 29 and token BIGGER resolved as reduce.
+Conflict in state 160 between rule 29 and token SMALLER resolved as reduce.
+Conflict in state 160 between rule 29 and token DIVIDED resolved as reduce.
+Conflict in state 160 between rule 29 and token PLUS resolved as reduce.
+Conflict in state 160 between rule 29 and token MINUS resolved as reduce.
+Conflict in state 160 between rule 29 and token MULTIPLY resolved as reduce.
+State 0 contains 2 shift/reduce conflicts and 1 reduce/reduce conflict.
+State 4 contains 1 reduce/reduce conflict.
+State 5 contains 2 shift/reduce conflicts.
+State 6 contains 1 shift/reduce conflict and 1 reduce/reduce conflict.
+State 18 contains 2 shift/reduce conflicts.
+State 19 contains 1 shift/reduce conflict and 11 reduce/reduce conflicts.
+State 48 contains 8 shift/reduce conflicts and 3 reduce/reduce conflicts.
+State 58 contains 1 shift/reduce conflict and 10 reduce/reduce conflicts.
+State 73 contains 9 shift/reduce conflicts and 2 reduce/reduce conflicts.
+State 171 contains 9 shift/reduce conflicts and 2 reduce/reduce conflicts.
+State 172 contains 9 shift/reduce conflicts and 2 reduce/reduce conflicts.
+State 201 contains 9 shift/reduce conflicts and 2 reduce/reduce conflicts.
+State 202 contains 9 shift/reduce conflicts and 2 reduce/reduce conflicts.
+
+Grammar
+rule 1    main_program -> code
+rule 2    main_program -> main_func
+rule 3    main_func -> FUNCTION TYPE_VOID MAIN LP parameter_list RP SCB code_block ECB
+rule 4    code -> code
+rule 5    code -> function
+rule 6    code -> void_function
+rule 7    code -> comments
+rule 8    code ->		/* empty */
+rule 9    comments -> COMMENTS
+rule 10   comments ->		/* empty */
+rule 11   void_function -> FUNCTION TYPE_VOID id LP parameter_list RP SCB code_block ECB
+rule 12   void_function -> comments void_function
+rule 13   void_function -> void_function comments
+rule 14   id -> ID
+rule 15   function -> FUNCTION type id LP parameter_list RP SCB func_body return ECB
+rule 16   code_block -> SCB var_dec body ECB
+rule 17   args -> id COMMA args
+rule 18   args -> id
+rule 19   parameter_list -> type args EOS parameter_list
+rule 20   parameter_list ->		/* empty */
+rule 21   exp -> exp BIGGER exp
+rule 22   exp -> exp BIGGER_EQ exp
+rule 23   exp -> exp SMALLER exp
+rule 24   exp -> exp SMALLER_EQ exp
+rule 25   exp -> exp EQUALIVATION exp
+rule 26   exp -> exp NOTEQUAL exp
+rule 27   exp -> exp PLUS exp
+rule 28   exp -> exp MINUS exp
+rule 29   exp -> exp MULTIPLY exp
+rule 30   exp -> exp DIVIDED exp
+rule 31   exp -> exp AND exp
+rule 32   exp -> exp OR exp
+rule 33   exp -> NOT exp
+rule 34   exp -> LP exp RP
+rule 35   exp -> literal
+rule 36   exp -> pointer_id
+rule 37   exp -> ADDRESS_OF exp
+rule 38   pointer_id -> MULTIPLY exp
+rule 39   literal -> id
+rule 40   literal -> int
+rule 41   literal -> real
+rule 42   literal -> bool
+rule 43   literal -> char
+rule 44   literal -> STRING
+rule 45   literal -> EMPTY_STRING
+rule 46   literal -> NULL
+rule 47   int -> DEC_INT
+rule 48   int -> HEX_INT
+rule 49   real -> REAL
+rule 50   bool -> TRUE
+rule 51   bool -> FALSE
+rule 52   char -> CHAR_uppercase
+rule 53   char -> CHAR_lowercase
+rule 54   char -> CHAR
+rule 58   var_dec -> var_dec premitive_dec
+rule 59   var_dec -> var_dec string_dec
+rule 60   var_dec ->		/* empty */
+rule 61   premitive_dec -> VAR type premitive_assign_op EOS
+rule 62   string_dec -> TYPE_STRING string_assign_op EOS
+rule 63   string_assign_op -> id BSI exp ESI
+rule 64   string_assign_op -> id BSI exp ESI COMMA string_assign_op
+rule 65   string_assign_op -> id BSI exp ESI EQUAL string
+rule 66   string_assign_op -> id BSI exp ESI EQUAL string COMMA string_assign_op
+rule 67   premitive_assign_op -> id
+rule 68   premitive_assign_op -> id COMMA premitive_assign_op
+rule 69   premitive_assign_op -> id EQUAL exp
+rule 70   premitive_assign_op -> id EQUAL exp COMMA premitive_assign_op
+rule 71   string -> STRING
+rule 72   string -> EMPTY_STRING
+rule 73   body -> body body_
+rule 74   body ->		/* empty */
+rule 76   type -> TYPE_INT
+rule 77   type -> TYPE_CHAR
+rule 78   type -> TYPE_REAL
+rule 79   type -> TYPE_BOOL
+rule 80   type -> TYPE_P_INT
+rule 81   type -> TYPE_P_CHAR
+rule 82   type -> TYPE_P_REAL
+rule 83   func_body -> body
+rule 84   return -> RETURN literal
+rule 89   body_ -> ifelse
+rule 90   body_ -> loop
+rule 91   body_ -> function
+rule 92   body_ -> void_function
+rule 93   body_ -> function_call
+rule 94   body_ -> code_block
+rule 95   body_ ->		/* empty */
+rule 96   function_call -> id LP RP
+rule 97   function_call -> id LP exp_list RP
+rule 98   exp_list -> exp
+rule 99   exp_list -> exp_list COMMA exp
+rule 100  ifelse -> IF LP exp RP SCB body ECB
+rule 101  ifelse -> IF LP exp RP SCB body ECB ELSE SCB body ECB
+rule 102  loop -> WHILE LP exp RP SCB body ECB
+rule 103  loop -> for_loop
+rule 104  loop -> DO code_block WHILE LP exp RP EOS
+rule 105  for_loop -> FOR LP loop_i_dec EOS exp EOS inc_dec RP SCB body ECB
+rule 106  inc_dec -> id PLUSONE
+rule 107  inc_dec -> PLUSONE id
+rule 108  inc_dec -> id MINUSONE
+rule 109  inc_dec -> MINUSONE id
+rule 110  loop_i_dec -> INT id EQUAL DEC_INT
+rule 111  loop_i_dec -> id EQUAL DEC_INT
+rule 112  loop_i_dec -> id
+
+Terminals, with rules where they appear
+
+$ (-1)
+error (256)
+FUNCTION (258) 3 11 15
+TYPE_BOOL (259) 79
+TYPE_STRING (260) 62
+TYPE_VOID (261) 3 11
+MAIN (262) 3
+TYPE_INT (263) 76
+TYPE_CHAR (264) 77
+TYPE_REAL (265) 78
+TYPE_P_INT (266) 80
+TYPE_P_CHAR (267) 81
+TYPE_P_REAL (268) 82
+COMMENTS (269) 9
+ILLEGAL_COMMENT (270)
+EOS (271) 19 61 62 104 105
+ID (272) 14
+IF (273) 100 101
+ELSE (274) 101
+WHILE (275) 102 104
+FOR (276) 105
+DO (277) 104
+VAR (278) 61
+RETURN (279) 84
+TRUE (280) 50
+FALSE (281) 51
+NULL (282) 46
+AND (283) 31
+OR (284) 32
+EQUALIVATION (285) 25
+NOTEQUAL (286) 26
+PLUSONE (287) 106 107
+MINUSONE (288) 108 109
+BIGGER_EQ (289) 22
+SMALLER_EQ (290) 24
+BIGGER (291) 21
+SMALLER (292) 23
+DIVIDED (293) 30
+EQUAL (294) 65 66 69 70 110 111
+PLUS (295) 27
+MINUS (296) 28
+MULTIPLY (297) 29 38
+NOT (298) 33
+ADDRESS_OF (299) 37
+SCB (300) 3 11 15 16 100 101 102 105
+ECB (301) 3 11 15 16 100 101 102 105
+LP (302) 3 11 15 34 96 97 100 101 102 104 105
+RP (303) 3 11 15 34 96 97 100 101 102 104 105
+COMMA (304) 17 64 66 68 70 99
+BSI (305) 63 64 65 66 88
+ESI (306) 63 64 65 66 88
+DLOS (307)
+ILLEGAL_POINTER (308)
+POINTER (309)
+CHAR_lowercase (310) 53
+CHAR_uppercase (311) 52
+CHAR (312) 54
+INT (313) 110
+INVALID_STRING (314)
+STRING (315) 44 71
+EMPTY_STRING (316) 45 72
+DEC_INT (317) 47 55 110 111
+HEX_INT (318) 48 56
+REAL (319) 49 57
+
+Nonterminals, with rules where they appear
+
+main_program (65)
+    on left: 1 2
+main_func (66)
+    on left: 3, on right: 2
+code (67)
+    on left: 4 5 6 7 8, on right: 1 4
+comments (68)
+    on left: 9 10, on right: 7 12 13
+void_function (69)
+    on left: 11 12 13, on right: 6 12 13 92
+id (70)
+    on left: 14, on right: 11 15 17 18 39 63 64 65 66 67 68 69 70 86
+    88 96 97 106 107 108 109 110 111 112
+function (71)
+    on left: 15, on right: 5 91
+code_block (72)
+    on left: 16, on right: 3 11 94 104
+args (73)
+    on left: 17 18, on right: 17 19
+parameter_list (74)
+    on left: 19 20, on right: 3 11 15 19
+exp (75)
+    on left: 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37,
+    on right: 21 22 23 24 25 26 27 28 29 30 31 32 33 34 37 38 63 64
+    65 66 69 70 88 98 99 100 101 102 104 105
+pointer_id (76)
+    on left: 38, on right: 36 87
+literal (77)
+    on left: 39 40 41 42 43 44 45 46, on right: 35 84
+int (78)
+    on left: 47 48, on right: 40
+real (79)
+    on left: 49, on right: 41
+bool (80)
+    on left: 50 51, on right: 42
+char (81)
+    on left: 52 53 54, on right: 43
+var_dec (82)
+    on left: 58 59 60, on right: 16 58 59
+premitive_dec (83)
+    on left: 61, on right: 58
+string_dec (84)
+    on left: 62, on right: 59
+string_assign_op (85)
+    on left: 63 64 65 66, on right: 62 64 66
+premitive_assign_op (86)
+    on left: 67 68 69 70, on right: 61 68 70
+string (87)
+    on left: 71 72, on right: 65 66
+body (88)
+    on left: 73 74, on right: 16 73 83 100 101 102 105
+type (89)
+    on left: 76 77 78 79 80 81 82, on right: 15 19 61
+func_body (90)
+    on left: 83, on right: 15
+return (91)
+    on left: 84, on right: 15
+body_ (92)
+    on left: 89 90 91 92 93 94 95, on right: 73
+function_call (93)
+    on left: 96 97, on right: 93
+exp_list (94)
+    on left: 98 99, on right: 97 99
+ifelse (95)
+    on left: 100 101, on right: 89
+loop (96)
+    on left: 102 103 104, on right: 90
+for_loop (97)
+    on left: 105, on right: 103
+inc_dec (98)
+    on left: 106 107 108 109, on right: 105
+loop_i_dec (99)
+    on left: 110 111 112, on right: 105
+
+
+state 0
+
+    FUNCTION	shift, and go to state 1
+    COMMENTS	shift, and go to state 2
+
+    $   	reduce using rule 8 (code)
+    $   	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    PLUSONE	reduce using rule 8 (code)
+    PLUSONE	[reduce using rule 10 (comments)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    ECB 	reduce using rule 10 (comments)
+    REAL	reduce using rule 8 (code)
+    REAL	[reduce using rule 10 (comments)]
+    $default	reduce using rule 8 (code)
+
+    main_program	go to state 205
+    main_func	go to state 3
+    code	go to state 4
+    comments	go to state 5
+    void_function	go to state 6
+    function	go to state 7
+
+
+
+state 1
+
+    main_func  ->  FUNCTION . TYPE_VOID MAIN LP parameter_list RP SCB code_block ECB   (rule 3)
+    void_function  ->  FUNCTION . TYPE_VOID id LP parameter_list RP SCB code_block ECB   (rule 11)
+    function  ->  FUNCTION . type id LP parameter_list RP SCB func_body return ECB   (rule 15)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_VOID	shift, and go to state 9
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    type	go to state 16
+
+
+
+state 2
+
+    comments  ->  COMMENTS .   (rule 9)
+
+    $default	reduce using rule 9 (comments)
+
+
+
+state 3
+
+    main_program  ->  main_func .   (rule 2)
+
+    $default	reduce using rule 2 (main_program)
+
+
+
+state 4
+
+    main_program  ->  code .   (rule 1)
+    code  ->  code .   (rule 4)
+
+    $   	reduce using rule 1 (main_program)
+    $   	[reduce using rule 4 (code)]
+    PLUSONE	reduce using rule 1 (main_program)
+    PLUSONE	[reduce using rule 4 (code)]
+    REAL	reduce using rule 1 (main_program)
+    REAL	[reduce using rule 4 (code)]
+    $default	reduce using rule 1 (main_program)
+
+
+
+state 5
+
+    code  ->  comments .   (rule 7)
+    void_function  ->  comments . void_function   (rule 12)
+
+    FUNCTION	shift, and go to state 17
+    COMMENTS	shift, and go to state 2
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    ECB 	reduce using rule 10 (comments)
+    $default	reduce using rule 7 (code)
+
+    comments	go to state 18
+    void_function	go to state 19
+
+
+
+state 6
+
+    code  ->  void_function .   (rule 6)
+    void_function  ->  void_function . comments   (rule 13)
+
+    COMMENTS	shift, and go to state 2
+
+    $   	reduce using rule 6 (code)
+    $   	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    PLUSONE	reduce using rule 6 (code)
+    PLUSONE	[reduce using rule 10 (comments)]
+    ECB 	reduce using rule 10 (comments)
+    REAL	reduce using rule 6 (code)
+    REAL	[reduce using rule 10 (comments)]
+    $default	reduce using rule 6 (code)
+
+    comments	go to state 20
+
+
+
+state 7
+
+    code  ->  function .   (rule 5)
+
+    $default	reduce using rule 5 (code)
+
+
+
+state 8
+
+    type  ->  TYPE_BOOL .   (rule 79)
+
+    $default	reduce using rule 79 (type)
+
+
+
+state 9
+
+    main_func  ->  FUNCTION TYPE_VOID . MAIN LP parameter_list RP SCB code_block ECB   (rule 3)
+    void_function  ->  FUNCTION TYPE_VOID . id LP parameter_list RP SCB code_block ECB   (rule 11)
+
+    MAIN	shift, and go to state 21
+    ID  	shift, and go to state 22
+
+    id  	go to state 23
+
+
+
+state 10
+
+    type  ->  TYPE_INT .   (rule 76)
+
+    $default	reduce using rule 76 (type)
+
+
+
+state 11
+
+    type  ->  TYPE_CHAR .   (rule 77)
+
+    $default	reduce using rule 77 (type)
+
+
+
+state 12
+
+    type  ->  TYPE_REAL .   (rule 78)
+
+    $default	reduce using rule 78 (type)
+
+
+
+state 13
+
+    type  ->  TYPE_P_INT .   (rule 80)
+
+    $default	reduce using rule 80 (type)
+
+
+
+state 14
+
+    type  ->  TYPE_P_CHAR .   (rule 81)
+
+    $default	reduce using rule 81 (type)
+
+
+
+state 15
+
+    type  ->  TYPE_P_REAL .   (rule 82)
+
+    $default	reduce using rule 82 (type)
+
+
+
+state 16
+
+    function  ->  FUNCTION type . id LP parameter_list RP SCB func_body return ECB   (rule 15)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 24
+
+
+
+state 17
+
+    void_function  ->  FUNCTION . TYPE_VOID id LP parameter_list RP SCB code_block ECB   (rule 11)
+
+    TYPE_VOID	shift, and go to state 25
+
+
+
+state 18
+
+    void_function  ->  comments . void_function   (rule 12)
+
+    FUNCTION	shift, and go to state 17
+    COMMENTS	shift, and go to state 2
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    $default	reduce using rule 10 (comments)
+
+    comments	go to state 18
+    void_function	go to state 19
+
+
+
+state 19
+
+    void_function  ->  comments void_function .   (rule 12)
+    void_function  ->  void_function . comments   (rule 13)
+
+    COMMENTS	shift, and go to state 2
+
+    $   	reduce using rule 10 (comments)
+    $   	[reduce using rule 12 (void_function)]
+    FUNCTION	reduce using rule 10 (comments)
+    FUNCTION	[reduce using rule 12 (void_function)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 12 (void_function)]
+    ID  	reduce using rule 10 (comments)
+    ID  	[reduce using rule 12 (void_function)]
+    IF  	reduce using rule 10 (comments)
+    IF  	[reduce using rule 12 (void_function)]
+    WHILE	reduce using rule 10 (comments)
+    WHILE	[reduce using rule 12 (void_function)]
+    FOR 	reduce using rule 10 (comments)
+    FOR 	[reduce using rule 12 (void_function)]
+    DO  	reduce using rule 10 (comments)
+    DO  	[reduce using rule 12 (void_function)]
+    RETURN	reduce using rule 10 (comments)
+    RETURN	[reduce using rule 12 (void_function)]
+    PLUSONE	reduce using rule 10 (comments)
+    PLUSONE	[reduce using rule 12 (void_function)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 12 (void_function)]
+    ECB 	reduce using rule 10 (comments)
+    ECB 	[reduce using rule 12 (void_function)]
+    COMMA	reduce using rule 10 (comments)
+    COMMA	[reduce using rule 12 (void_function)]
+    BSI 	reduce using rule 10 (comments)
+    BSI 	[reduce using rule 12 (void_function)]
+    DLOS	reduce using rule 10 (comments)
+    DLOS	[reduce using rule 12 (void_function)]
+    ILLEGAL_POINTER	reduce using rule 10 (comments)
+    ILLEGAL_POINTER	[reduce using rule 12 (void_function)]
+    POINTER	reduce using rule 10 (comments)
+    POINTER	[reduce using rule 12 (void_function)]
+    CHAR_uppercase	reduce using rule 10 (comments)
+    CHAR_uppercase	[reduce using rule 12 (void_function)]
+    REAL	reduce using rule 10 (comments)
+    REAL	[reduce using rule 12 (void_function)]
+    $default	reduce using rule 10 (comments)
+
+    comments	go to state 20
+
+
+
+state 20
+
+    void_function  ->  void_function comments .   (rule 13)
+
+    $default	reduce using rule 13 (void_function)
+
+
+
+state 21
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN . LP parameter_list RP SCB code_block ECB   (rule 3)
+
+    LP  	shift, and go to state 26
+
+
+
+state 22
+
+    id  ->  ID .   (rule 14)
+
+    $default	reduce using rule 14 (id)
+
+
+
+state 23
+
+    void_function  ->  FUNCTION TYPE_VOID id . LP parameter_list RP SCB code_block ECB   (rule 11)
+
+    LP  	shift, and go to state 27
+
+
+
+state 24
+
+    function  ->  FUNCTION type id . LP parameter_list RP SCB func_body return ECB   (rule 15)
+
+    LP  	shift, and go to state 28
+
+
+
+state 25
+
+    void_function  ->  FUNCTION TYPE_VOID . id LP parameter_list RP SCB code_block ECB   (rule 11)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 23
+
+
+
+state 26
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP . parameter_list RP SCB code_block ECB   (rule 3)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    $default	reduce using rule 20 (parameter_list)
+
+    parameter_list	go to state 29
+    type	go to state 30
+
+
+
+state 27
+
+    void_function  ->  FUNCTION TYPE_VOID id LP . parameter_list RP SCB code_block ECB   (rule 11)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    $default	reduce using rule 20 (parameter_list)
+
+    parameter_list	go to state 31
+    type	go to state 30
+
+
+
+state 28
+
+    function  ->  FUNCTION type id LP . parameter_list RP SCB func_body return ECB   (rule 15)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    $default	reduce using rule 20 (parameter_list)
+
+    parameter_list	go to state 32
+    type	go to state 30
+
+
+
+state 29
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP parameter_list . RP SCB code_block ECB   (rule 3)
+
+    RP  	shift, and go to state 33
+
+
+
+state 30
+
+    parameter_list  ->  type . args EOS parameter_list   (rule 19)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 34
+    args	go to state 35
+
+
+
+state 31
+
+    void_function  ->  FUNCTION TYPE_VOID id LP parameter_list . RP SCB code_block ECB   (rule 11)
+
+    RP  	shift, and go to state 36
+
+
+
+state 32
+
+    function  ->  FUNCTION type id LP parameter_list . RP SCB func_body return ECB   (rule 15)
+
+    RP  	shift, and go to state 37
+
+
+
+state 33
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP parameter_list RP . SCB code_block ECB   (rule 3)
+
+    SCB 	shift, and go to state 38
+
+
+
+state 34
+
+    args  ->  id . COMMA args   (rule 17)
+    args  ->  id .   (rule 18)
+
+    COMMA	shift, and go to state 39
+
+    $default	reduce using rule 18 (args)
+
+
+
+state 35
+
+    parameter_list  ->  type args . EOS parameter_list   (rule 19)
+
+    EOS 	shift, and go to state 40
+
+
+
+state 36
+
+    void_function  ->  FUNCTION TYPE_VOID id LP parameter_list RP . SCB code_block ECB   (rule 11)
+
+    SCB 	shift, and go to state 41
+
+
+
+state 37
+
+    function  ->  FUNCTION type id LP parameter_list RP . SCB func_body return ECB   (rule 15)
+
+    SCB 	shift, and go to state 42
+
+
+
+state 38
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP parameter_list RP SCB . code_block ECB   (rule 3)
+
+    SCB 	shift, and go to state 43
+
+    code_block	go to state 44
+
+
+
+state 39
+
+    args  ->  id COMMA . args   (rule 17)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 34
+    args	go to state 45
+
+
+
+state 40
+
+    parameter_list  ->  type args EOS . parameter_list   (rule 19)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    $default	reduce using rule 20 (parameter_list)
+
+    parameter_list	go to state 46
+    type	go to state 30
+
+
+
+state 41
+
+    void_function  ->  FUNCTION TYPE_VOID id LP parameter_list RP SCB . code_block ECB   (rule 11)
+
+    SCB 	shift, and go to state 43
+
+    code_block	go to state 47
+
+
+
+state 42
+
+    function  ->  FUNCTION type id LP parameter_list RP SCB . func_body return ECB   (rule 15)
+
+    $default	reduce using rule 74 (body)
+
+    body	go to state 48
+    func_body	go to state 49
+
+
+
+state 43
+
+    code_block  ->  SCB . var_dec body ECB   (rule 16)
+
+    $default	reduce using rule 60 (var_dec)
+
+    var_dec	go to state 50
+
+
+
+state 44
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP parameter_list RP SCB code_block . ECB   (rule 3)
+
+    ECB 	shift, and go to state 51
+
+
+
+state 45
+
+    args  ->  id COMMA args .   (rule 17)
+
+    $default	reduce using rule 17 (args)
+
+
+
+state 46
+
+    parameter_list  ->  type args EOS parameter_list .   (rule 19)
+
+    $default	reduce using rule 19 (parameter_list)
+
+
+
+state 47
+
+    void_function  ->  FUNCTION TYPE_VOID id LP parameter_list RP SCB code_block . ECB   (rule 11)
+
+    ECB 	shift, and go to state 52
+
+
+
+state 48
+
+    body  ->  body . body_   (rule 73)
+    func_body  ->  body .   (rule 83)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    RETURN	reduce using rule 83 (func_body)
+    RETURN	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	reduce using rule 10 (comments)
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+    CHAR_uppercase	reduce using rule 83 (func_body)
+    CHAR_uppercase	[reduce using rule 95 (body_)]
+    $default	reduce using rule 83 (func_body)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 49
+
+    function  ->  FUNCTION type id LP parameter_list RP SCB func_body . return ECB   (rule 15)
+
+    RETURN	shift, and go to state 67
+
+    return	go to state 68
+
+
+
+state 50
+
+    code_block  ->  SCB var_dec . body ECB   (rule 16)
+    var_dec  ->  var_dec . premitive_dec   (rule 58)
+    var_dec  ->  var_dec . string_dec   (rule 59)
+
+    TYPE_STRING	shift, and go to state 69
+    VAR 	shift, and go to state 70
+
+    $default	reduce using rule 74 (body)
+
+    premitive_dec	go to state 71
+    string_dec	go to state 72
+    body	go to state 73
+
+
+
+state 51
+
+    main_func  ->  FUNCTION TYPE_VOID MAIN LP parameter_list RP SCB code_block ECB .   (rule 3)
+
+    $default	reduce using rule 3 (main_func)
+
+
+
+state 52
+
+    void_function  ->  FUNCTION TYPE_VOID id LP parameter_list RP SCB code_block ECB .   (rule 11)
+
+    $default	reduce using rule 11 (void_function)
+
+
+
+state 53
+
+    void_function  ->  FUNCTION . TYPE_VOID id LP parameter_list RP SCB code_block ECB   (rule 11)
+    function  ->  FUNCTION . type id LP parameter_list RP SCB func_body return ECB   (rule 15)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_VOID	shift, and go to state 25
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    type	go to state 16
+
+
+
+state 54
+
+    ifelse  ->  IF . LP exp RP SCB body ECB   (rule 100)
+    ifelse  ->  IF . LP exp RP SCB body ECB ELSE SCB body ECB   (rule 101)
+
+    LP  	shift, and go to state 74
+
+
+
+state 55
+
+    loop  ->  WHILE . LP exp RP SCB body ECB   (rule 102)
+
+    LP  	shift, and go to state 75
+
+
+
+state 56
+
+    for_loop  ->  FOR . LP loop_i_dec EOS exp EOS inc_dec RP SCB body ECB   (rule 105)
+
+    LP  	shift, and go to state 76
+
+
+
+state 57
+
+    loop  ->  DO . code_block WHILE LP exp RP EOS   (rule 104)
+
+    SCB 	shift, and go to state 43
+
+    code_block	go to state 77
+
+
+
+state 58
+
+    void_function  ->  void_function . comments   (rule 13)
+    body_  ->  void_function .   (rule 92)
+
+    COMMENTS	shift, and go to state 2
+
+    FUNCTION	reduce using rule 10 (comments)
+    FUNCTION	[reduce using rule 92 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 92 (body_)]
+    ID  	reduce using rule 10 (comments)
+    ID  	[reduce using rule 92 (body_)]
+    IF  	reduce using rule 10 (comments)
+    IF  	[reduce using rule 92 (body_)]
+    WHILE	reduce using rule 10 (comments)
+    WHILE	[reduce using rule 92 (body_)]
+    FOR 	reduce using rule 10 (comments)
+    FOR 	[reduce using rule 92 (body_)]
+    DO  	reduce using rule 10 (comments)
+    DO  	[reduce using rule 92 (body_)]
+    RETURN	reduce using rule 10 (comments)
+    RETURN	[reduce using rule 92 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 92 (body_)]
+    ECB 	reduce using rule 10 (comments)
+    ECB 	[reduce using rule 92 (body_)]
+    COMMA	reduce using rule 10 (comments)
+    COMMA	[reduce using rule 92 (body_)]
+    BSI 	reduce using rule 10 (comments)
+    BSI 	[reduce using rule 92 (body_)]
+    DLOS	reduce using rule 10 (comments)
+    DLOS	[reduce using rule 92 (body_)]
+    ILLEGAL_POINTER	reduce using rule 10 (comments)
+    ILLEGAL_POINTER	[reduce using rule 92 (body_)]
+    POINTER	reduce using rule 10 (comments)
+    POINTER	[reduce using rule 92 (body_)]
+    CHAR_uppercase	reduce using rule 10 (comments)
+    CHAR_uppercase	[reduce using rule 92 (body_)]
+    $default	reduce using rule 10 (comments)
+
+    comments	go to state 20
+
+
+
+state 59
+
+    function_call  ->  id . LP RP   (rule 96)
+    function_call  ->  id . LP exp_list RP   (rule 97)
+
+    LP  	shift, and go to state 78
+
+
+
+state 60
+
+    body_  ->  function .   (rule 91)
+
+    $default	reduce using rule 91 (body_)
+
+
+
+state 61
+
+    body_  ->  code_block .   (rule 94)
+
+    $default	reduce using rule 94 (body_)
+
+
+
+state 62
+
+    body  ->  body body_ .   (rule 73)
+
+    $default	reduce using rule 73 (body)
+
+
+
+state 63
+
+    body_  ->  function_call .   (rule 93)
+
+    $default	reduce using rule 93 (body_)
+
+
+
+state 64
+
+    body_  ->  ifelse .   (rule 89)
+
+    $default	reduce using rule 89 (body_)
+
+
+
+state 65
+
+    body_  ->  loop .   (rule 90)
+
+    $default	reduce using rule 90 (body_)
+
+
+
+state 66
+
+    loop  ->  for_loop .   (rule 103)
+
+    $default	reduce using rule 103 (loop)
+
+
+
+state 67
+
+    return  ->  RETURN . literal   (rule 84)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    literal	go to state 91
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 68
+
+    function  ->  FUNCTION type id LP parameter_list RP SCB func_body return . ECB   (rule 15)
+
+    ECB 	shift, and go to state 96
+
+
+
+state 69
+
+    string_dec  ->  TYPE_STRING . string_assign_op EOS   (rule 62)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 97
+    string_assign_op	go to state 98
+
+
+
+state 70
+
+    premitive_dec  ->  VAR . type premitive_assign_op EOS   (rule 61)
+
+    TYPE_BOOL	shift, and go to state 8
+    TYPE_INT	shift, and go to state 10
+    TYPE_CHAR	shift, and go to state 11
+    TYPE_REAL	shift, and go to state 12
+    TYPE_P_INT	shift, and go to state 13
+    TYPE_P_CHAR	shift, and go to state 14
+    TYPE_P_REAL	shift, and go to state 15
+
+    type	go to state 99
+
+
+
+state 71
+
+    var_dec  ->  var_dec premitive_dec .   (rule 58)
+
+    $default	reduce using rule 58 (var_dec)
+
+
+
+state 72
+
+    var_dec  ->  var_dec string_dec .   (rule 59)
+
+    $default	reduce using rule 59 (var_dec)
+
+
+
+state 73
+
+    code_block  ->  SCB var_dec body . ECB   (rule 16)
+    body  ->  body . body_   (rule 73)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+    ECB 	shift, and go to state 100
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	[reduce using rule 10 (comments)]
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 74
+
+    ifelse  ->  IF LP . exp RP SCB body ECB   (rule 100)
+    ifelse  ->  IF LP . exp RP SCB body ECB ELSE SCB body ECB   (rule 101)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 105
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 75
+
+    loop  ->  WHILE LP . exp RP SCB body ECB   (rule 102)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 108
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 76
+
+    for_loop  ->  FOR LP . loop_i_dec EOS exp EOS inc_dec RP SCB body ECB   (rule 105)
+
+    ID  	shift, and go to state 22
+    INT 	shift, and go to state 109
+
+    id  	go to state 110
+    loop_i_dec	go to state 111
+
+
+
+state 77
+
+    loop  ->  DO code_block . WHILE LP exp RP EOS   (rule 104)
+
+    WHILE	shift, and go to state 112
+
+
+
+state 78
+
+    function_call  ->  id LP . RP   (rule 96)
+    function_call  ->  id LP . exp_list RP   (rule 97)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    RP  	shift, and go to state 113
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 114
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+    exp_list	go to state 115
+
+
+
+state 79
+
+    bool  ->  TRUE .   (rule 50)
+
+    $default	reduce using rule 50 (bool)
+
+
+
+state 80
+
+    bool  ->  FALSE .   (rule 51)
+
+    $default	reduce using rule 51 (bool)
+
+
+
+state 81
+
+    literal  ->  NULL .   (rule 46)
+
+    $default	reduce using rule 46 (literal)
+
+
+
+state 82
+
+    char  ->  CHAR_lowercase .   (rule 53)
+
+    $default	reduce using rule 53 (char)
+
+
+
+state 83
+
+    char  ->  CHAR_uppercase .   (rule 52)
+
+    $default	reduce using rule 52 (char)
+
+
+
+state 84
+
+    char  ->  CHAR .   (rule 54)
+
+    $default	reduce using rule 54 (char)
+
+
+
+state 85
+
+    literal  ->  STRING .   (rule 44)
+
+    $default	reduce using rule 44 (literal)
+
+
+
+state 86
+
+    literal  ->  EMPTY_STRING .   (rule 45)
+
+    $default	reduce using rule 45 (literal)
+
+
+
+state 87
+
+    int  ->  DEC_INT .   (rule 47)
+
+    $default	reduce using rule 47 (int)
+
+
+
+state 88
+
+    int  ->  HEX_INT .   (rule 48)
+
+    $default	reduce using rule 48 (int)
+
+
+
+state 89
+
+    real  ->  REAL .   (rule 49)
+
+    $default	reduce using rule 49 (real)
+
+
+
+state 90
+
+    literal  ->  id .   (rule 39)
+
+    $default	reduce using rule 39 (literal)
+
+
+
+state 91
+
+    return  ->  RETURN literal .   (rule 84)
+
+    $default	reduce using rule 84 (return)
+
+
+
+state 92
+
+    literal  ->  int .   (rule 40)
+
+    $default	reduce using rule 40 (literal)
+
+
+
+state 93
+
+    literal  ->  real .   (rule 41)
+
+    $default	reduce using rule 41 (literal)
+
+
+
+state 94
+
+    literal  ->  bool .   (rule 42)
+
+    $default	reduce using rule 42 (literal)
+
+
+
+state 95
+
+    literal  ->  char .   (rule 43)
+
+    $default	reduce using rule 43 (literal)
+
+
+
+state 96
+
+    function  ->  FUNCTION type id LP parameter_list RP SCB func_body return ECB .   (rule 15)
+
+    $default	reduce using rule 15 (function)
+
+
+
+state 97
+
+    string_assign_op  ->  id . BSI exp ESI   (rule 63)
+    string_assign_op  ->  id . BSI exp ESI COMMA string_assign_op   (rule 64)
+    string_assign_op  ->  id . BSI exp ESI EQUAL string   (rule 65)
+    string_assign_op  ->  id . BSI exp ESI EQUAL string COMMA string_assign_op   (rule 66)
+
+    BSI 	shift, and go to state 116
+
+
+
+state 98
+
+    string_dec  ->  TYPE_STRING string_assign_op . EOS   (rule 62)
+
+    EOS 	shift, and go to state 117
+
+
+
+state 99
+
+    premitive_dec  ->  VAR type . premitive_assign_op EOS   (rule 61)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 118
+    premitive_assign_op	go to state 119
+
+
+
+state 100
+
+    code_block  ->  SCB var_dec body ECB .   (rule 16)
+
+    $default	reduce using rule 16 (code_block)
+
+
+
+state 101
+
+    pointer_id  ->  MULTIPLY . exp   (rule 38)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 120
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 102
+
+    exp  ->  NOT . exp   (rule 33)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 121
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 103
+
+    exp  ->  ADDRESS_OF . exp   (rule 37)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 122
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 104
+
+    exp  ->  LP . exp RP   (rule 34)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 123
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 105
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    ifelse  ->  IF LP exp . RP SCB body ECB   (rule 100)
+    ifelse  ->  IF LP exp . RP SCB body ECB ELSE SCB body ECB   (rule 101)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    RP  	shift, and go to state 136
+
+
+
+state 106
+
+    exp  ->  pointer_id .   (rule 36)
+
+    $default	reduce using rule 36 (exp)
+
+
+
+state 107
+
+    exp  ->  literal .   (rule 35)
+
+    $default	reduce using rule 35 (exp)
+
+
+
+state 108
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    loop  ->  WHILE LP exp . RP SCB body ECB   (rule 102)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    RP  	shift, and go to state 137
+
+
+
+state 109
+
+    loop_i_dec  ->  INT . id EQUAL DEC_INT   (rule 110)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 138
+
+
+
+state 110
+
+    loop_i_dec  ->  id . EQUAL DEC_INT   (rule 111)
+    loop_i_dec  ->  id .   (rule 112)
+
+    EQUAL	shift, and go to state 139
+
+    $default	reduce using rule 112 (loop_i_dec)
+
+
+
+state 111
+
+    for_loop  ->  FOR LP loop_i_dec . EOS exp EOS inc_dec RP SCB body ECB   (rule 105)
+
+    EOS 	shift, and go to state 140
+
+
+
+state 112
+
+    loop  ->  DO code_block WHILE . LP exp RP EOS   (rule 104)
+
+    LP  	shift, and go to state 141
+
+
+
+state 113
+
+    function_call  ->  id LP RP .   (rule 96)
+
+    $default	reduce using rule 96 (function_call)
+
+
+
+state 114
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp_list  ->  exp .   (rule 98)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 98 (exp_list)
+
+
+
+state 115
+
+    function_call  ->  id LP exp_list . RP   (rule 97)
+    exp_list  ->  exp_list . COMMA exp   (rule 99)
+
+    RP  	shift, and go to state 142
+    COMMA	shift, and go to state 143
+
+
+
+state 116
+
+    string_assign_op  ->  id BSI . exp ESI   (rule 63)
+    string_assign_op  ->  id BSI . exp ESI COMMA string_assign_op   (rule 64)
+    string_assign_op  ->  id BSI . exp ESI EQUAL string   (rule 65)
+    string_assign_op  ->  id BSI . exp ESI EQUAL string COMMA string_assign_op   (rule 66)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 144
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 117
+
+    string_dec  ->  TYPE_STRING string_assign_op EOS .   (rule 62)
+
+    $default	reduce using rule 62 (string_dec)
+
+
+
+state 118
+
+    premitive_assign_op  ->  id .   (rule 67)
+    premitive_assign_op  ->  id . COMMA premitive_assign_op   (rule 68)
+    premitive_assign_op  ->  id . EQUAL exp   (rule 69)
+    premitive_assign_op  ->  id . EQUAL exp COMMA premitive_assign_op   (rule 70)
+
+    EQUAL	shift, and go to state 145
+    COMMA	shift, and go to state 146
+
+    $default	reduce using rule 67 (premitive_assign_op)
+
+
+
+state 119
+
+    premitive_dec  ->  VAR type premitive_assign_op . EOS   (rule 61)
+
+    EOS 	shift, and go to state 147
+
+
+
+state 120
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    pointer_id  ->  MULTIPLY exp .   (rule 38)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+
+    $default	reduce using rule 38 (pointer_id)
+
+
+
+state 121
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp  ->  NOT exp .   (rule 33)
+
+
+    $default	reduce using rule 33 (exp)
+
+
+
+state 122
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp  ->  ADDRESS_OF exp .   (rule 37)
+
+
+    $default	reduce using rule 37 (exp)
+
+
+
+state 123
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp  ->  LP exp . RP   (rule 34)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    RP  	shift, and go to state 148
+
+
+
+state 124
+
+    exp  ->  exp AND . exp   (rule 31)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 149
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 125
+
+    exp  ->  exp OR . exp   (rule 32)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 150
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 126
+
+    exp  ->  exp EQUALIVATION . exp   (rule 25)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 151
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 127
+
+    exp  ->  exp NOTEQUAL . exp   (rule 26)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 152
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 128
+
+    exp  ->  exp BIGGER_EQ . exp   (rule 22)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 153
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 129
+
+    exp  ->  exp SMALLER_EQ . exp   (rule 24)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 154
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 130
+
+    exp  ->  exp BIGGER . exp   (rule 21)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 155
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 131
+
+    exp  ->  exp SMALLER . exp   (rule 23)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 156
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 132
+
+    exp  ->  exp DIVIDED . exp   (rule 30)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 157
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 133
+
+    exp  ->  exp PLUS . exp   (rule 27)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 158
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 134
+
+    exp  ->  exp MINUS . exp   (rule 28)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 159
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 135
+
+    exp  ->  exp MULTIPLY . exp   (rule 29)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 160
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 136
+
+    ifelse  ->  IF LP exp RP . SCB body ECB   (rule 100)
+    ifelse  ->  IF LP exp RP . SCB body ECB ELSE SCB body ECB   (rule 101)
+
+    SCB 	shift, and go to state 161
+
+
+
+state 137
+
+    loop  ->  WHILE LP exp RP . SCB body ECB   (rule 102)
+
+    SCB 	shift, and go to state 162
+
+
+
+state 138
+
+    loop_i_dec  ->  INT id . EQUAL DEC_INT   (rule 110)
+
+    EQUAL	shift, and go to state 163
+
+
+
+state 139
+
+    loop_i_dec  ->  id EQUAL . DEC_INT   (rule 111)
+
+    DEC_INT	shift, and go to state 164
+
+
+
+state 140
+
+    for_loop  ->  FOR LP loop_i_dec EOS . exp EOS inc_dec RP SCB body ECB   (rule 105)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 165
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 141
+
+    loop  ->  DO code_block WHILE LP . exp RP EOS   (rule 104)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 166
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 142
+
+    function_call  ->  id LP exp_list RP .   (rule 97)
+
+    $default	reduce using rule 97 (function_call)
+
+
+
+state 143
+
+    exp_list  ->  exp_list COMMA . exp   (rule 99)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 167
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 144
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    string_assign_op  ->  id BSI exp . ESI   (rule 63)
+    string_assign_op  ->  id BSI exp . ESI COMMA string_assign_op   (rule 64)
+    string_assign_op  ->  id BSI exp . ESI EQUAL string   (rule 65)
+    string_assign_op  ->  id BSI exp . ESI EQUAL string COMMA string_assign_op   (rule 66)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    ESI 	shift, and go to state 168
+
+
+
+state 145
+
+    premitive_assign_op  ->  id EQUAL . exp   (rule 69)
+    premitive_assign_op  ->  id EQUAL . exp COMMA premitive_assign_op   (rule 70)
+
+    ID  	shift, and go to state 22
+    TRUE	shift, and go to state 79
+    FALSE	shift, and go to state 80
+    NULL	shift, and go to state 81
+    MULTIPLY	shift, and go to state 101
+    NOT 	shift, and go to state 102
+    ADDRESS_OF	shift, and go to state 103
+    LP  	shift, and go to state 104
+    CHAR_lowercase	shift, and go to state 82
+    CHAR_uppercase	shift, and go to state 83
+    CHAR	shift, and go to state 84
+    STRING	shift, and go to state 85
+    EMPTY_STRING	shift, and go to state 86
+    DEC_INT	shift, and go to state 87
+    HEX_INT	shift, and go to state 88
+    REAL	shift, and go to state 89
+
+    id  	go to state 90
+    exp 	go to state 169
+    pointer_id	go to state 106
+    literal	go to state 107
+    int 	go to state 92
+    real	go to state 93
+    bool	go to state 94
+    char	go to state 95
+
+
+
+state 146
+
+    premitive_assign_op  ->  id COMMA . premitive_assign_op   (rule 68)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 118
+    premitive_assign_op	go to state 170
+
+
+
+state 147
+
+    premitive_dec  ->  VAR type premitive_assign_op EOS .   (rule 61)
+
+    $default	reduce using rule 61 (premitive_dec)
+
+
+
+state 148
+
+    exp  ->  LP exp RP .   (rule 34)
+
+    $default	reduce using rule 34 (exp)
+
+
+
+state 149
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp AND exp .   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+
+    $default	reduce using rule 31 (exp)
+
+
+
+state 150
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp  ->  exp OR exp .   (rule 32)
+
+
+    $default	reduce using rule 32 (exp)
+
+
+
+state 151
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp EQUALIVATION exp .   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 25 (exp)
+
+
+
+state 152
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp NOTEQUAL exp .   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 26 (exp)
+
+
+
+state 153
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp BIGGER_EQ exp .   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 22 (exp)
+
+
+
+state 154
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp SMALLER_EQ exp .   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 24 (exp)
+
+
+
+state 155
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp BIGGER exp .   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 21 (exp)
+
+
+
+state 156
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp SMALLER exp .   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 23 (exp)
+
+
+
+state 157
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp DIVIDED exp .   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+
+    $default	reduce using rule 30 (exp)
+
+
+
+state 158
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp PLUS exp .   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 27 (exp)
+
+
+
+state 159
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp MINUS exp .   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    DIVIDED	shift, and go to state 132
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 28 (exp)
+
+
+
+state 160
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp MULTIPLY exp .   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+
+    $default	reduce using rule 29 (exp)
+
+
+
+state 161
+
+    ifelse  ->  IF LP exp RP SCB . body ECB   (rule 100)
+    ifelse  ->  IF LP exp RP SCB . body ECB ELSE SCB body ECB   (rule 101)
+
+    $default	reduce using rule 74 (body)
+
+    body	go to state 171
+
+
+
+state 162
+
+    loop  ->  WHILE LP exp RP SCB . body ECB   (rule 102)
+
+    $default	reduce using rule 74 (body)
+
+    body	go to state 172
+
+
+
+state 163
+
+    loop_i_dec  ->  INT id EQUAL . DEC_INT   (rule 110)
+
+    DEC_INT	shift, and go to state 173
+
+
+
+state 164
+
+    loop_i_dec  ->  id EQUAL DEC_INT .   (rule 111)
+
+    $default	reduce using rule 111 (loop_i_dec)
+
+
+
+state 165
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    for_loop  ->  FOR LP loop_i_dec EOS exp . EOS inc_dec RP SCB body ECB   (rule 105)
+
+    EOS 	shift, and go to state 174
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+
+
+state 166
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    loop  ->  DO code_block WHILE LP exp . RP EOS   (rule 104)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    RP  	shift, and go to state 175
+
+
+
+state 167
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    exp_list  ->  exp_list COMMA exp .   (rule 99)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+
+    $default	reduce using rule 99 (exp_list)
+
+
+
+state 168
+
+    string_assign_op  ->  id BSI exp ESI .   (rule 63)
+    string_assign_op  ->  id BSI exp ESI . COMMA string_assign_op   (rule 64)
+    string_assign_op  ->  id BSI exp ESI . EQUAL string   (rule 65)
+    string_assign_op  ->  id BSI exp ESI . EQUAL string COMMA string_assign_op   (rule 66)
+
+    EQUAL	shift, and go to state 176
+    COMMA	shift, and go to state 177
+
+    $default	reduce using rule 63 (string_assign_op)
+
+
+
+state 169
+
+    exp  ->  exp . BIGGER exp   (rule 21)
+    exp  ->  exp . BIGGER_EQ exp   (rule 22)
+    exp  ->  exp . SMALLER exp   (rule 23)
+    exp  ->  exp . SMALLER_EQ exp   (rule 24)
+    exp  ->  exp . EQUALIVATION exp   (rule 25)
+    exp  ->  exp . NOTEQUAL exp   (rule 26)
+    exp  ->  exp . PLUS exp   (rule 27)
+    exp  ->  exp . MINUS exp   (rule 28)
+    exp  ->  exp . MULTIPLY exp   (rule 29)
+    exp  ->  exp . DIVIDED exp   (rule 30)
+    exp  ->  exp . AND exp   (rule 31)
+    exp  ->  exp . OR exp   (rule 32)
+    premitive_assign_op  ->  id EQUAL exp .   (rule 69)
+    premitive_assign_op  ->  id EQUAL exp . COMMA premitive_assign_op   (rule 70)
+
+    AND 	shift, and go to state 124
+    OR  	shift, and go to state 125
+    EQUALIVATION	shift, and go to state 126
+    NOTEQUAL	shift, and go to state 127
+    BIGGER_EQ	shift, and go to state 128
+    SMALLER_EQ	shift, and go to state 129
+    BIGGER	shift, and go to state 130
+    SMALLER	shift, and go to state 131
+    DIVIDED	shift, and go to state 132
+    PLUS	shift, and go to state 133
+    MINUS	shift, and go to state 134
+    MULTIPLY	shift, and go to state 135
+    COMMA	shift, and go to state 178
+
+    $default	reduce using rule 69 (premitive_assign_op)
+
+
+
+state 170
+
+    premitive_assign_op  ->  id COMMA premitive_assign_op .   (rule 68)
+
+    $default	reduce using rule 68 (premitive_assign_op)
+
+
+
+state 171
+
+    body  ->  body . body_   (rule 73)
+    ifelse  ->  IF LP exp RP SCB body . ECB   (rule 100)
+    ifelse  ->  IF LP exp RP SCB body . ECB ELSE SCB body ECB   (rule 101)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+    ECB 	shift, and go to state 179
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	[reduce using rule 10 (comments)]
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 172
+
+    body  ->  body . body_   (rule 73)
+    loop  ->  WHILE LP exp RP SCB body . ECB   (rule 102)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+    ECB 	shift, and go to state 180
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	[reduce using rule 10 (comments)]
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 173
+
+    loop_i_dec  ->  INT id EQUAL DEC_INT .   (rule 110)
+
+    $default	reduce using rule 110 (loop_i_dec)
+
+
+
+state 174
+
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS . inc_dec RP SCB body ECB   (rule 105)
+
+    ID  	shift, and go to state 22
+    PLUSONE	shift, and go to state 181
+    MINUSONE	shift, and go to state 182
+
+    id  	go to state 183
+    inc_dec	go to state 184
+
+
+
+state 175
+
+    loop  ->  DO code_block WHILE LP exp RP . EOS   (rule 104)
+
+    EOS 	shift, and go to state 185
+
+
+
+state 176
+
+    string_assign_op  ->  id BSI exp ESI EQUAL . string   (rule 65)
+    string_assign_op  ->  id BSI exp ESI EQUAL . string COMMA string_assign_op   (rule 66)
+
+    STRING	shift, and go to state 186
+    EMPTY_STRING	shift, and go to state 187
+
+    string	go to state 188
+
+
+
+state 177
+
+    string_assign_op  ->  id BSI exp ESI COMMA . string_assign_op   (rule 64)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 97
+    string_assign_op	go to state 189
+
+
+
+state 178
+
+    premitive_assign_op  ->  id EQUAL exp COMMA . premitive_assign_op   (rule 70)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 118
+    premitive_assign_op	go to state 190
+
+
+
+state 179
+
+    ifelse  ->  IF LP exp RP SCB body ECB .   (rule 100)
+    ifelse  ->  IF LP exp RP SCB body ECB . ELSE SCB body ECB   (rule 101)
+
+    ELSE	shift, and go to state 191
+
+    $default	reduce using rule 100 (ifelse)
+
+
+
+state 180
+
+    loop  ->  WHILE LP exp RP SCB body ECB .   (rule 102)
+
+    $default	reduce using rule 102 (loop)
+
+
+
+state 181
+
+    inc_dec  ->  PLUSONE . id   (rule 107)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 192
+
+
+
+state 182
+
+    inc_dec  ->  MINUSONE . id   (rule 109)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 193
+
+
+
+state 183
+
+    inc_dec  ->  id . PLUSONE   (rule 106)
+    inc_dec  ->  id . MINUSONE   (rule 108)
+
+    PLUSONE	shift, and go to state 194
+    MINUSONE	shift, and go to state 195
+
+
+
+state 184
+
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS inc_dec . RP SCB body ECB   (rule 105)
+
+    RP  	shift, and go to state 196
+
+
+
+state 185
+
+    loop  ->  DO code_block WHILE LP exp RP EOS .   (rule 104)
+
+    $default	reduce using rule 104 (loop)
+
+
+
+state 186
+
+    string  ->  STRING .   (rule 71)
+
+    $default	reduce using rule 71 (string)
+
+
+
+state 187
+
+    string  ->  EMPTY_STRING .   (rule 72)
+
+    $default	reduce using rule 72 (string)
+
+
+
+state 188
+
+    string_assign_op  ->  id BSI exp ESI EQUAL string .   (rule 65)
+    string_assign_op  ->  id BSI exp ESI EQUAL string . COMMA string_assign_op   (rule 66)
+
+    COMMA	shift, and go to state 197
+
+    $default	reduce using rule 65 (string_assign_op)
+
+
+
+state 189
+
+    string_assign_op  ->  id BSI exp ESI COMMA string_assign_op .   (rule 64)
+
+    $default	reduce using rule 64 (string_assign_op)
+
+
+
+state 190
+
+    premitive_assign_op  ->  id EQUAL exp COMMA premitive_assign_op .   (rule 70)
+
+    $default	reduce using rule 70 (premitive_assign_op)
+
+
+
+state 191
+
+    ifelse  ->  IF LP exp RP SCB body ECB ELSE . SCB body ECB   (rule 101)
+
+    SCB 	shift, and go to state 198
+
+
+
+state 192
+
+    inc_dec  ->  PLUSONE id .   (rule 107)
+
+    $default	reduce using rule 107 (inc_dec)
+
+
+
+state 193
+
+    inc_dec  ->  MINUSONE id .   (rule 109)
+
+    $default	reduce using rule 109 (inc_dec)
+
+
+
+state 194
+
+    inc_dec  ->  id PLUSONE .   (rule 106)
+
+    $default	reduce using rule 106 (inc_dec)
+
+
+
+state 195
+
+    inc_dec  ->  id MINUSONE .   (rule 108)
+
+    $default	reduce using rule 108 (inc_dec)
+
+
+
+state 196
+
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS inc_dec RP . SCB body ECB   (rule 105)
+
+    SCB 	shift, and go to state 199
+
+
+
+state 197
+
+    string_assign_op  ->  id BSI exp ESI EQUAL string COMMA . string_assign_op   (rule 66)
+
+    ID  	shift, and go to state 22
+
+    id  	go to state 97
+    string_assign_op	go to state 200
+
+
+
+state 198
+
+    ifelse  ->  IF LP exp RP SCB body ECB ELSE SCB . body ECB   (rule 101)
+
+    $default	reduce using rule 74 (body)
+
+    body	go to state 201
+
+
+
+state 199
+
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS inc_dec RP SCB . body ECB   (rule 105)
+
+    $default	reduce using rule 74 (body)
+
+    body	go to state 202
+
+
+
+state 200
+
+    string_assign_op  ->  id BSI exp ESI EQUAL string COMMA string_assign_op .   (rule 66)
+
+    $default	reduce using rule 66 (string_assign_op)
+
+
+
+state 201
+
+    body  ->  body . body_   (rule 73)
+    ifelse  ->  IF LP exp RP SCB body ECB ELSE SCB body . ECB   (rule 101)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+    ECB 	shift, and go to state 203
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	[reduce using rule 10 (comments)]
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 202
+
+    body  ->  body . body_   (rule 73)
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS inc_dec RP SCB body . ECB   (rule 105)
+
+    FUNCTION	shift, and go to state 53
+    COMMENTS	shift, and go to state 2
+    ID  	shift, and go to state 22
+    IF  	shift, and go to state 54
+    WHILE	shift, and go to state 55
+    FOR 	shift, and go to state 56
+    DO  	shift, and go to state 57
+    SCB 	shift, and go to state 43
+    ECB 	shift, and go to state 204
+
+    FUNCTION	[reduce using rule 10 (comments)]
+    FUNCTION	[reduce using rule 95 (body_)]
+    COMMENTS	[reduce using rule 10 (comments)]
+    COMMENTS	[reduce using rule 95 (body_)]
+    ID  	[reduce using rule 95 (body_)]
+    IF  	[reduce using rule 95 (body_)]
+    WHILE	[reduce using rule 95 (body_)]
+    FOR 	[reduce using rule 95 (body_)]
+    DO  	[reduce using rule 95 (body_)]
+    SMALLER_EQ	reduce using rule 10 (comments)
+    SMALLER_EQ	[reduce using rule 95 (body_)]
+    ECB 	[reduce using rule 10 (comments)]
+    ECB 	[reduce using rule 95 (body_)]
+    COMMA	reduce using rule 95 (body_)
+    BSI 	reduce using rule 95 (body_)
+    DLOS	reduce using rule 95 (body_)
+    ILLEGAL_POINTER	reduce using rule 95 (body_)
+    POINTER	reduce using rule 95 (body_)
+
+    comments	go to state 18
+    void_function	go to state 58
+    id  	go to state 59
+    function	go to state 60
+    code_block	go to state 61
+    body_	go to state 62
+    function_call	go to state 63
+    ifelse	go to state 64
+    loop	go to state 65
+    for_loop	go to state 66
+
+
+
+state 203
+
+    ifelse  ->  IF LP exp RP SCB body ECB ELSE SCB body ECB .   (rule 101)
+
+    $default	reduce using rule 101 (ifelse)
+
+
+
+state 204
+
+    for_loop  ->  FOR LP loop_i_dec EOS exp EOS inc_dec RP SCB body ECB .   (rule 105)
+
+    $default	reduce using rule 105 (for_loop)
+
+
+
+state 205
+
+    $   	go to state 206
+
+
+
+state 206
+
+    $   	go to state 207
+
+
+
+state 207
+
+    $default	accept

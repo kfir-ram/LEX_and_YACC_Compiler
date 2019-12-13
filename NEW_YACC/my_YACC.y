@@ -7,10 +7,10 @@ extern int yylineno;
 %}
 %token FUNCTION, TYPE_BOOL, TYPE_STRING, TYPE_VOID, MAIN
 %token TYPE_INT, TYPE_CHAR, TYPE_REAL, TYPE_P_INT, TYPE_P_CHAR, TYPE_P_REAL
-%token COMMENTS, ILLEGAL_COMMENT, EOS, ID, IF, ELSE, WHILE, FOR, DO, VAR, RETURN, TRUE, FALSE, NULL
+%token EOS, ID, IF, ELSE, WHILE, FOR, DO, VAR, RETURN, TRUE, FALSE, NULL
 %token AND, OR, EQUALIVATION, NOTEQUAL, PLUSONE, MINUSONE, BIGGER_EQ, SMALLER_EQ, BIGGER, SMALLER, DIVIDED, EQUAL, PLUS, MINUS, MULTIPLY
-%token NOT, ADDRESS_OF, SCB, ECB, LP, RP, COMMA, BSI, ESI, DLOS
-%token ILLEGAL_POINTER, POINTER, CHAR_lowercase, CHAR_uppercase, CHAR, INT, INVALID_STRING, STRING, EMPTY_STRING, DEC_INT, HEX_INT, REAL
+%token NOT, ADDRESS_OF, SCB, ECB, LP, RP, COMMA, BSI, ESI, LENGTH
+%token CHAR_lowercase, CHAR_uppercase, CHAR, INVALID_STRING, STRING, EMPTY_STRING, DEC_INT, HEX_INT, REAL
 %left ESI COMMA RP ECB
 %left EQUALIVATION SMALLER_EQ BIGGER_EQ BIGGER SMALLER NOTEQUAL
 %left PLUS MINUS
@@ -22,44 +22,47 @@ extern int yylineno;
 %start main_program
 %%
 
-main_program:	code 
-				|main_func {printf("program: code MAIN\n");}
+main_program:	code {printf("finished code!!!!!!!\n");}
+				|main_func {printf("finished program: code MAIN\n");}
 
-main_func:		FUNCTION TYPE_VOID MAIN LP parameter_list RP SCB code_block ECB
+main_func:		FUNCTION TYPE_VOID MAIN LP parameter_list RP code_block
 
-code: 			code //comments
-				|function {printf("code commenst function\n");}
-				|void_function {printf("code commenst void_function\n");}
-				|comments
-				|;
+code: 			function {printf("code comments function\n");}
+				|void_function {printf("code comments void_function\n");}
+				|
 
-comments:		COMMENTS
-				|;
 
-void_function:	FUNCTION TYPE_VOID id LP parameter_list RP SCB code_block ECB
-				|comments void_function
-				|void_function comments
+				
 
+void_function:	FUNCTION TYPE_VOID id LP parameter_list RP void_code_block code
+				
 
 id:				ID
 
-function:		FUNCTION type id LP parameter_list RP SCB func_body return ECB
+function:		FUNCTION type id LP parameter_list RP code_block code
 
-code_block: 	SCB var_dec body ECB {printf("block:SCB body ECB");}
+void_code_block: 	SCB var_dec body ECB//SCB var_dec body ECB {printf("block:SCB body ECB\n");}
 
-args:		id COMMA args 	{printf("args:ID COMMA args\n");}
-			|id			{printf("args:ID\n");}
+code_block:			SCB var_dec body return ECB
+
+
+//body_block:		var_dec body
+
+
+args:			id COMMA args 	{printf("args:ID COMMA args\n");}
+				|id			{printf("args:ID\n");}
 
 			
-
-parameter_list:	type args EOS parameter_list 
-				|;
+parameter_list:	type args EOS parameter_list
+				|type args
+				|{}
 
 exp:		exp BIGGER exp {printf("exp:exp BIGGER exp\n");}
 			|exp BIGGER_EQ exp {printf("exp:exp BIGGER_EQ exp\n");}
 			|exp SMALLER exp {printf("exp:exp SMALLER exp\n");}
 			|exp SMALLER_EQ exp {printf("exp:exp SMALLER_EQ exp\n");}
 			|exp EQUALIVATION exp {printf("exp:exp EQUALIVATION exp\n");}
+			|assignment_statment {printf("exp:exp EQUAL exp\n");}
 			|exp NOTEQUAL exp {printf("exp:exp NOTEQUAL exp\n");}
  			|exp PLUS exp {printf("exp:exp PLUS exp\n");}
 			|exp MINUS exp {printf("exp:exp MINUS exp\n");}
@@ -69,9 +72,8 @@ exp:		exp BIGGER exp {printf("exp:exp BIGGER exp\n");}
 			|exp OR exp {printf("exp:exp OR exp\n");}
 			|NOT exp {printf("exp:NOT exp\n");}
 			|LP exp RP {printf("exp:LP exp RP\n");}
-			//|MULTIPLY exp {printf("exp:MULTIPLY exp\n");}
 			|literal {printf("exp: literal \n");}
-			|pointer_id
+			|pointer_id {printf("exp: pointer_id \n");}
 			|ADDRESS_OF exp {printf("exp:ADDRESS_OF exp\n");}
 
 
@@ -80,22 +82,27 @@ exp:		exp BIGGER exp {printf("exp:exp BIGGER exp\n");}
 pointer_id:	MULTIPLY exp {printf("exp:MULTIPLY exp\n");}
 
 
-literal:	id {printf("literal:id\n");}
-			|int {printf("literal:DEC_INT\n");}
-			//|HEX_INT {printf("literal:HEX_INT\n");}
-			|real {printf("literal:REAL\n");}
+literal:	number
+			|id {printf("literal:id\n");}
 			|bool {printf("literal:bool\n");}
 			|char {printf("literal:char\n");}
-			|STRING {printf("literal:STRING\n");}
-			|EMPTY_STRING {printf("literal:EMPTY_STRING\n");}
-			|NULL	{printf("literal:NULL\n");}
+			|string {printf("literal:STRING\n");}
+			|null	{printf("literal:NULL\n");}
+			|string_length
+			|literal BSI exp ESI//---------------------------
+
+
+
+
+null:		NULL
+
 
 int:		DEC_INT
 			|HEX_INT
 
 real:		REAL
-
 bool:		TRUE {printf("bool:TRUE\n");}
+
 			|FALSE {printf("bool:FALSE\n");}
 
 char:		CHAR_uppercase {printf("char:CHAR_uppercase\n");}
@@ -103,14 +110,16 @@ char:		CHAR_uppercase {printf("char:CHAR_uppercase\n");}
 			|CHAR {printf("char:CHAR\n");}
 
 
-number:			DEC_INT {printf("number:DEC_INT\n");}
-				|HEX_INT {printf("number:HEX_INT\n");}
-				|REAL {printf("number:REAL\n");}
+number:			int {printf("number:DEC_INT\n");}
+				|real{printf("number:HEX_INT\n");}
+				
 
+string_length:	LENGTH string LENGTH
+				|LENGTH id LENGTH
 
-var_dec:		var_dec premitive_dec {printf("var_dec:var_dec premitive_dec");}
-				|var_dec string_dec {printf("var_dec:var_dec string_dec");}
-				|;
+var_dec:		var_dec premitive_dec {printf("var_dec:var_dec premitive_dec\n");}
+				|var_dec string_dec {printf("var_dec:var_dec string_dec\n");}
+				|{printf("var_dec: epsilon\n");}
 
 premitive_dec:	VAR type premitive_assign_op EOS {printf("premitive_dec:VAR type premitive_assign_op EOS");}
 
@@ -118,9 +127,9 @@ premitive_dec:	VAR type premitive_assign_op EOS {printf("premitive_dec:VAR type 
 string_dec:		TYPE_STRING string_assign_op EOS {printf("string_dec:TYPE_STRING string_assign_op EOS\n");}
 
 string_assign_op:		id BSI exp ESI {printf("string_assign_op:ID BSI exp ESI \n");}
-						|id BSI exp ESI COMMA string_assign_op {printf("string_assign_op:ID BSI exp ESI COMMA string_assign_op \n");}
-						|id BSI exp ESI EQUAL string {printf("string_assign_op:ID BSI exp ESI EQUAL string \n");}
-						|id BSI exp ESI EQUAL string COMMA string_assign_op {printf("string_assign_op:ID BSI exp ESI EQUAL string COMMA string_assign_op \n");}
+						|string_assign_op COMMA id BSI exp ESI {printf("string_assign_op:ID BSI exp ESI COMMA string_assign_op \n");}
+						|string  EQUAL id BSI exp ESI  {printf("string_assign_op:ID BSI exp ESI EQUAL string \n");}
+						|string_assign_op COMMA id BSI exp ESI EQUAL string   {printf("string_assign_op:ID BSI exp ESI EQUAL string COMMA string_assign_op \n");}
 				
 
 premitive_assign_op:	id {printf("premitive_assign_op:ID\n");}
@@ -129,15 +138,12 @@ premitive_assign_op:	id {printf("premitive_assign_op:ID\n");}
 						|id EQUAL exp COMMA premitive_assign_op {printf("premitive_assign_op:ID EQUAL exp COMMA premitive_assign_op \n");}
 
 
-string:			STRING
-				|EMPTY_STRING
+string:			STRING {printf("string:STRING\n");}
+				|EMPTY_STRING {printf("string:EMPTY_STRING\n");}
 
 
 
-body:			body body_ {printf("block:SCB body ECB");}
-				| {printf("block:SCB body ECB");} 
 
-string_type:	
 
 type:			TYPE_INT 	{printf("(TYPE__INT)\n");}
 				|TYPE_CHAR 	{printf("(TYPE__CHAR)\n")}
@@ -147,36 +153,41 @@ type:			TYPE_INT 	{printf("(TYPE__INT)\n");}
 				|TYPE_P_CHAR	{printf("(TYPE__char*)\n");}
 				|TYPE_P_REAL	{printf("(TYPE__REAL*)\n");}
 
-func_body:	body {printf("func_body body\n");}//----todo---we dont need that
 
 
 
-return:		RETURN literal 
 
-assignment_statment:	var_type EQUAL exp
+return:		RETURN literal EOS
 
-var_type:	id
-			|pointer_id
-			|id BSI exp ESI
 
+assignment_statment:	exp EQUAL exp EOS
+
+
+body:			body body_ {printf("block:SCB body ECB\n");}
+				|body exp_list 
+				| {printf("block:SCB body ECB\n");} 
 
 body_:		ifelse {printf("body_:ifelse\n")}
 			|loop {printf("body_:loop\n")}
 			|function {printf("body_:function\n")}
 			|void_function {printf("body_:void_function\n")}
 			|function_call {printf("body_:function_call\n")}
-			|code_block
+			|void_code_block
+			
+			//|exp EQUAL exp
+			//|assignment_statment
+			//|var_dec
 			//| {printf("block:SCB body ECB");}
 
 function_call:	id LP RP {printf("function_call:ID LP RP \n");}
 				|id LP exp_list RP {printf("function_call:ID LP exp_list RP \n");}
 
-exp_list:		exp {pritnf("exp_list:exp\n");}
-				|exp_list COMMA exp {printf("exp_list:exp_list COMMA exp");}
+exp_list:		exp {printf("exp_list:exp\n");}
+				|exp_list COMMA exp {printf("exp_list:exp_list COMMA exp\n");}
 
 
-ifelse:			IF LP exp RP SCB body ECB {printf("if:IF LP exp RP SCB body ECB \n");}
-				|IF LP exp RP SCB body ECB ELSE SCB body ECB //{printf("if:ELSE SCB body ECB\n");}
+ifelse:			IF LP exp RP body_  {printf("if:IF LP exp RP SCB body ECB \n");}
+				|IF LP exp RP body_ ELSE body_ //{printf("if:ELSE SCB body ECB\n");}
 			//|IF LP exp RP body {printf("if:IF LP exp RP body\n");}
 			//|ELSE body_ {printf("if:ELSE body\n");}
 
@@ -191,7 +202,23 @@ inc_dec:	id PLUSONE {printf("i++\n");}
 			|id MINUSONE {printf("i--\n");}
 			|MINUSONE id {printf("--i\n");}
 
-loop_i_dec: INT id EQUAL DEC_INT {printf("loop_i_dec: INT ID EQUAL DEC_INT\n");}
+loop_i_dec: number id EQUAL DEC_INT {printf("loop_i_dec: INT ID EQUAL DEC_INT\n");}
 			|id EQUAL DEC_INT {printf("loop_i_dec:ID EQUAL DEC_INT\n");}
 			|id {printf("loop_i_dec: ID\n");}
 
+%%
+
+#include "lex.yy.c"
+int main() {return yyparse();}
+
+int yyerror(){
+ 	fflush(stdout);
+ 	fprintf(stderr, "\n\n------------------------------------------------------\nError located in line: %d\n", yylineno);
+	fprintf(stderr, "The parser can not accept: \" %s \" .\n",yytext);
+	return 0;
+}
+
+
+int yywrap(){
+	return 1;
+}

@@ -1,14 +1,13 @@
  //this file was made by:
  //Kfir Rahamim 203426721
- //Hen Dahan 312585953	
+ //Hen Dahan 312585953	\*\*[a-zA-Z]+[a-zA-Z0-9_]*	{return ILLEGAL_POINTER;}
  //Bar Piglanski 204590384
 %{
 extern int yylineno;
 %}
 %option yylineno
 %%
-\/\*.*[\n]*.*\*\/		{return COMMENTS;}
-\/\/		{return ILLEGAL_COMMENT;}
+\/\*.*[\n]*.*\*\/		{;}
 ";"			{return EOS;}//End Of Statement
 "function"	{return FUNCTION;}
 "main"		{return MAIN;}
@@ -55,12 +54,12 @@ extern int yylineno;
 ","			{return COMMA;}
 "["			{return BSI;}//Begin String Index
 "]"			{return ESI;}//End String Index
-"|"			{return DLOS;}//Declared Lengh Of String |s|
+"|"			{return LENGTH;}//Declared Lengh Of String |s|
 
 [a-zA-Z]+[a-zA-Z0-9_]*		{return ID;}
 
-\*\*[a-zA-Z]+[a-zA-Z0-9_]*	{return ILLEGAL_POINTER;}
-\*[a-zA-Z]+[a-zA-Z0-9_]*	{return POINTER;}
+
+
 
 \'[a-z]\'	{return CHAR_lowercase;}//not shore need a check!!!!
 \'[A-Z]\'	{return CHAR_uppercase;}//not shore need a check!!!!

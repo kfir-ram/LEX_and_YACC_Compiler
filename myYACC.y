@@ -1,140 +1,389 @@
 %{
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-extern int yylex();
-extern int yylineno;
+	#include <stdio.h>
+	#include <string.h>
+	#include <stdlib.h>
+	extern int yylex();
+	extern char *yytext;
+	extern int yylineno;
+
+
+	typedef struct node
+	{
+		char *token;
+		struct node *son1;
+		struct node *son2;
+		struct node *son3;
+		struct node *son4;
+	}node;
+
+	int yyerror();
+	struct node* make_leaf(char* token);
+	struct node* make_two_nodes(char* token, node* son1, node* son2);
+	struct node* make_three_nodes(char* token, node* son1, node* son2, node* son3);
+	struct node* make_four_nodes(char* token, node* son1, node* son2, node* son3, node* son4);
+	struct node* empty_node();
+
+	int printTree(node* tree);
 %}
-%token FUNCTION, TYPE_BOOL, TYPE_STRING, TYPE_VOID
+
+%union{
+  char* string; 
+  struct node* node;
+}
+
+%token FUNCTION, TYPE_BOOL, TYPE_STRING, TYPE_VOID, MAIN
 %token TYPE_INT, TYPE_CHAR, TYPE_REAL, TYPE_P_INT, TYPE_P_CHAR, TYPE_P_REAL
-%token COMMENTS, ILLEGAL_COMMENT, EOS, ID, IF, ELSE, WHILE, FOR, DO, VAR, RETURN, TRUE, FALSE, NULL
-%token AND, OR, EQUALIVATION, NOTEQUAL, PLUSONE, MINUSONE, BIGGER_EQ, SMALLER_EQ, BIGGER, SMALLER, DIVIDED, EQUAL, PLUS, MINUS, MULTIPLY
-%token NOT, ADDRESS_OF, SCB, ECB, LP, RP, COMMA, BSI, ESI, DLOS, NUM
-%token ILLEGAL_POINTER, POINTER, CHAR_lowercase, CHAR_uppercase, CHAR, INT, INVALID_STRING, STRING, EMPTY_STRING, DEC_INT, HEX_INT, REAL
+%token EOS, ID, IF, ELSE, WHILE, FOR, DO, VAR, RETURN, TRUE, FALSE, NULL
+%token AND, OR, EQUALIVATION, NOTEQUAL, PLUSONE, MINUSONE, BIGGER_EQ, SMALLER_EQ
+%token BIGGER, SMALLER, DIVIDED, EQUAL, PLUS, MINUS, MULTIPLY
+%token NOT, ADDRESS_OF, SCB, ECB, LP, RP, COMMA, BSI, ESI, LENGTH
+%token CHAR_lowercase, CHAR_uppercase, CHAR, STRING, EMPTY_STRING, DEC_INT, HEX_INT, REAL
+%left ESI COMMA RP ECB
+%left EQUALIVATION SMALLER_EQ BIGGER_EQ BIGGER SMALLER NOTEQUAL
 %left PLUS MINUS
 %left MULTIPLY DIVIDED
+%left AND OR 
+%left EQUAL
+%right NOT ADDRESS_OF LP SCB BSI 
+%nonassoc IF ELSE FOR DO WHILE FUNCTION ID
+
+%type <node> main_program main_func code code_ functions void_function function 
+%type <node> void_code_block code_block parameter_list args pointer_id exp string_length 
+%type <node> var_dec string_dec string_assign_op premitive_assign_op return loop
+%type <node> assignment_statment body body_ function_call exp_list ifelse for_loop
+%type <node> while_loop inc_dec loop_i_dec declaration block
+%type <string> null int real bool char type literal id string number
+
+%start main_program
 %%
-program:	exp {printf("OK\n");
-			printf("the answer is: %d\n", $1);}
-			|code {printf("(CODE\n");}
 
-exp:		exp PLUS exp {printf("I'M DOING PLUS\n");}
-			|exp MINUS exp {printf("I'M DOING MINUS\n");}
-			|exp MULTIPLY exp {printf("I'M DOING MUL\n");}
-			|exp DIVIDED exp {printf("I'M DOING DIVIDE\n");}
-			|literal {printf("I'M a literal \n");};
+main_program:	code 		{printf("\n\n\n");$$ = make_two_nodes("CODE", $1, empty_node());
+							printTree($$);}
+
+code: 			functions code		{$$ = make_two_nodes("", make_two_nodes("FUNCTION", $1, empty_node()), $2);}
+				|main_func code_ 	{$$ = make_two_nodes("", make_two_nodes("FUNCTION", $1, empty_node()), $2);}
+				| 					{$$ = empty_node();}
+
+code_:			functions code_		{$$ = make_two_nodes("", make_two_nodes("FUNCTION", $1, empty_node()), $2);}
+				|
+
+main_func:		FUNCTION TYPE_VOID MAIN LP parameter_list RP void_code_block code
+					{$$ = make_two_nodes("",make_three_nodes("MAIN", $5, make_leaf("TYPE VOID"), $7), $8);}
+
+functions:		function      		{$$ = $1;}
+				|void_function 		{$$ = $1;}
+
+void_function:	FUNCTION TYPE_VOID id LP parameter_list RP void_code_block
+					{$$ = make_four_nodes("", make_leaf($3), make_two_nodes("ARGS",$5, empty_node()), make_leaf("TYPE VOID"), $7);}
+
+function:		FUNCTION type id LP parameter_list RP code_block
+				{$$ = make_three_nodes("", make_leaf($3), make_two_nodes("ARGS",$5, empty_node()), make_two_nodes($2, $7, empty_node()));}
+
+void_code_block: 	SCB block ECB {$$ = make_two_nodes("BODY", $2, empty_node());}
+
+code_block:			SCB block return ECB {$$ = make_two_nodes("BODY", $2, $3);}
+
+block:			block declaration 
+				|block body
+				|	
+	
+parameter_list:	type args EOS parameter_list 	{$$ = make_two_nodes("", make_two_nodes($1, $2, empty_node()), $4);}
+				|type args 						{$$ = make_two_nodes($1, $2, empty_node());}
+				|								{$$ = empty_node();}
+
+args:			id COMMA args 	{$$ = make_two_nodes("", make_leaf($1), $3);}
+				|id				{$$ = make_leaf($1);}
+
+exp_list:	exp 				{$$ = $1;}
+			|exp_list COMMA exp {$$ = make_two_nodes("ARGS", $1, $3);}
+			
+exp:		exp BIGGER exp 				{$$ = make_two_nodes(">", $1, $3);}
+			|exp BIGGER_EQ exp 			{$$ = make_two_nodes(">=", $1, $3);}
+			|exp SMALLER exp 			{$$ = make_two_nodes("<", $1, $3);}
+			|exp SMALLER_EQ exp 		{$$ = make_two_nodes("<=", $1, $3);}
+			|exp EQUALIVATION exp 		{$$ = make_two_nodes("==", $1, $3);}
+			|assignment_statment		{}
+			|exp NOTEQUAL exp 			{$$ = make_two_nodes("!=", $1, $3);}
+ 			|exp PLUS exp 				{$$ = make_two_nodes("+", $1, $3);}
+			|exp MINUS exp 				{$$ = make_two_nodes("-", $1, $3);}
+			|exp MULTIPLY exp 			{$$ = make_two_nodes("*", $1, $3);}
+			|exp DIVIDED exp 			{$$ = make_two_nodes("/", $1, $3);}
+			|exp AND exp 				{$$ = make_two_nodes("&&", $1, $3);}
+			|exp OR exp 				{$$ = make_two_nodes("||", $1, $3);}
+			|NOT exp 					{$$ = make_two_nodes("!", $2, empty_node());}
+			|LP exp RP 					{$$ = make_two_nodes("(", $2, make_leaf(")"));}
+			|literal 					{$$ = make_leaf($1);}
+			|pointer_id 				{$$ = $1;}
+			|ADDRESS_OF exp 			{$$ = make_two_nodes("ADDRESS OF", $2, empty_node());}
+			|inc_dec
+			|function_call
 
 
-code:		comments FUNCTION func_type id LP parameter_list RP SCB func_body ECB code { printf("(FUNCTION\n");}
-			|;
 
-func_type:	TYPE_VOID 	{printf("(TYPE VOID)\n");}
-			|TYPE_INT 	{printf("(TYPE INT)\n");}
-			|TYPE_CHAR 	{printf("(TYPE CHAR)\n");}
-			|TYPE_REAL 	{printf("(TYPE REAL)\n");}
-			|TYPE_P_INT {printf("(TYPE INT pointer)\n");}
-			|TYPE_P_REAL {printf("(TYPE REAL pointer)\n");}
-			|TYPE_P_CHAR {printf("(TYPE CHAR pointer)\n");}
-
-func_body:	body return {printf("I'M a function body\n");}
-			|code {printf("function inside a function\n");}
+literal:	number 						{$$ = $1;}
+			|id 						{$$ = $1;}
+			|bool 						{$$ = $1;}
+			|char 						{$$ = $1;}
+			|string 					{$$ = $1;}
+			|null						{$$ = $1;}
+			|literal BSI exp ESI 	{$$ = $1;}
+			|string_length				
 
 
-body:		type_string EOS body {printf("I'M a type_string body\n");}
-			|VAR type id EQUAL literal body EOS body {printf("I'M a EQUAL body\n");}
-			|VAR type id EOS body {printf("I'M a decleration body\n");}
-			|ifelse body {printf("I'M if body\n");}
-			|COMMA id EQUAL literal body {printf("I'M y=23 body \n");}
-			|COMMA id body {printf("I'M ,t body \n");}
-			|id EQUAL exp EOS body {printf("I'M body EXP\n");}
-			|loop body {printf("I'M body loop\n");}
-			|ID {printf("I'M body ID\n");}
-			|COMMENTS body {printf("im a comment\n");}
-			|;
+pointer_id:		MULTIPLY exp 	{$$ = make_two_nodes("POINTER OF", $2, empty_node());}
 
-literal:	HEX_INT {printf("literal HEX_INT\n");}
-			|DEC_INT {printf("literal DEC_INT\n");}
-			|NUM {printf("literal NUM\n");}
-			|REAL {printf("literal REAL\n");}
-			|CHAR_lowercase {printf("literal CHAR_lowercase\n");}
-			|CHAR_uppercase {printf("literal CHAR_uppercase\n");}
-			|CHAR {printf("literal CHAR\n")}
-			|STRING {printf("literal STRING\n");}
-			|EMPTY_STRING {printf("literal EMPTY_STRING\n");}
-			|ID {printf("literal ID\n");}
+id:				ID 				{$$ = strdup(yytext);}
+
+null:			NULL 			{$$ = "NULL";}
+
+number:			int 			{$$ = $1;}
+				|real 			{$$ = $1;}
+
+int:			DEC_INT			{$$ = strdup(yytext);}
+				|HEX_INT		{$$ = strdup(yytext);}
+
+real:			REAL 			{$$ = "REAL";}
+
+bool:			TRUE 			{$$ = "TYPE TRUE";}
+				|FALSE 			{$$ = "TYPE FALSE";}
+
+char:			CHAR_uppercase 	{$$ = "CHAR_UPPERCASE";}
+				|CHAR_lowercase {$$ = "CHAR_LOWERCASE";}
+				|CHAR 			{$$ = "CHAR";}
+
+string_length:	LENGTH string LENGTH 	{$$ = make_two_nodes("|", make_leaf($2), make_leaf("|"));}
+				|LENGTH id LENGTH 		{$$ = make_two_nodes("|", make_leaf($2), make_leaf("|"));}
+
+string:			STRING 				{$$ = "TYPE STRING";}
+				|EMPTY_STRING		{$$ = "EMPTY STRING";}
+				
+
+type:			TYPE_INT 			{$$ = "INT";}
+				|TYPE_CHAR 			{$$ = "CHAR";}
+				|TYPE_REAL 			{$$ = "REAL";}
+				|TYPE_BOOL			{$$ = "BOOL";}
+				|TYPE_P_INT			 {$$ = "INT POINTER";}
+				|TYPE_P_CHAR		{$$ = "CHAR POINTER";}
+				|TYPE_P_REAL		{$$ = "REAL POINTER";}
+
+body:			body_		{}	
+				|exp_list 	{}
+				
+
+body_:			ifelse 				{}
+				|loop 				{}
+				|function 			{}
+				|void_function 		{}
+				|function_call EOS 	{}
+				|void_code_block 	{}
+				//|assignment_statment		{$$ = $1;}
+				
+declaration:	var_dec
+				
+
+var_dec:		premitive_dec	{}
+				|string_dec 	{}
+				//| 						{}
+
+premitive_dec:		VAR type premitive_assign_op EOS {/*$$ = make_two_nodes("VAR", make_leaf($2), $3);*/}
+
+string_dec:		TYPE_STRING string_assign_op EOS {$$ = make_two_nodes("STRING", $2, empty_node());}
+
+string_assign_op:		id BSI exp ESI
+						|string_assign_op COMMA id BSI exp ESI 					{$$ = make_two_nodes("STRING", make_leaf($3), $5);}
+						|id BSI exp ESI EQUAL literal
+						|string_assign_op COMMA id BSI exp ESI EQUAL literal
+
+premitive_assign_op:	id
+						|id COMMA premitive_assign_op
+						|id EQUAL exp 							{}
+						|id EQUAL exp COMMA premitive_assign_op
+
+assignment_statment:	exp EQUAL exp EOS
 			
 
-
-ifelse:		IF LP bool_statment RP SCB func_body ECB {printf("I'M a if statment\n");}
-			|IF LP bool_statment RP {printf("I'M a if statment without block\n");}
-			|ELSE SCB func_body ECB {printf("I'M a else statment\n");}
-			|ELSE {printf("I'M a ELSE statment without block\n");}
+function_call:	id LP RP 			{$$ = make_two_nodes("CALL FUNCTION", make_leaf($1), make_leaf("ARGS NONE)"));}
+				|id LP exp_list RP 	{$$ = make_two_nodes("CALL FUNCTION", make_leaf($1), $3);}
 
 
-bool_statment:	id EQUALIVATION literal {printf("EQUALIVATION on if\n");}
-				|id NOTEQUAL literal {printf("NOTEQUAL on if\n");}
-				|id BIGGER_EQ literal {printf("BIGGER_EQ on if\n");}
-				|id SMALLER_EQ literal {printf("SMALLER_EQ on if\n");}
-				|id BIGGER literal {printf("BIGGER on if\n");}
-				|id SMALLER literal {printf("SMALLER on if\n");}
-				|bool_statment AND bool_statment {printf("bool_statment AND on if\n");}
-				|bool_statment OR bool_statment {printf("bool_statment OR on if\n");}
-				|NOT bool_statment {printf("NOT bool_statment on if\n");}
+ifelse:		IF LP exp RP void_code_block  						{}
+			|IF LP exp RP code_block 							{}
+			|IF LP exp RP void_code_block ELSE void_code_block
+			|IF LP exp RP void_code_block ELSE code_block
+			|IF LP exp RP code_block ELSE void_code_block
+			|IF LP exp RP code_block ELSE code_block
 
-id: 		id COMMA id {printf("I found 2 id's\n");}
-			|ID 		{printf("I'm some ID\n");}
+loop:		for_loop
+			|while_loop
 
-type:		TYPE_INT 	{printf("(TYPE__INT)\n");}
-			|TYPE_CHAR 	{printf("(TYPE__CHAR)\n")}
-			|TYPE_REAL 	{printf("(TYPE__REAL)\n");}
-			|type_string	{printf("(TYPE__STRING)\n");}
-			|TYPE_BOOL		{printf("(TYPE__BOOL)\n");}
-			|TYPE_P_INT		{printf("(TYPE__INT*)\n");}
-			|TYPE_P_CHAR	{printf("(TYPE__char*)\n");}
-			|TYPE_P_REAL	{printf("(TYPE__REAL*)\n");}
-			
+for_loop:	FOR LP loop_i_dec EOS exp EOS id EQUAL exp RP code_block
+			|FOR LP loop_i_dec EOS exp EOS id EQUAL exp RP void_code_block
+			|FOR LP loop_i_dec EOS exp EOS inc_dec RP code_block
+			|FOR LP loop_i_dec EOS exp EOS inc_dec RP void_code_block
 
+while_loop:	WHILE LP exp RP code_block				{}
+			|WHILE LP exp RP void_code_block		{}
+			|DO code_block WHILE LP exp RP EOS		{}
+			|DO void_code_block WHILE LP exp RP EOS {}
 
-parameter_list:	type id EOS parameter_list {printf("I'M a parameter list\n");}
-				|type id {printf("I'M the second parameter list\n");}
-				|;
+inc_dec:	id PLUSONE 		{$$ = make_two_nodes($1, make_leaf("++"), empty_node());}
+			|PLUSONE id 	{$$ = make_two_nodes("++", make_leaf($2), empty_node());}
+			|id MINUSONE 	{$$ = make_two_nodes($1, make_leaf("--"), empty_node());}
+			|MINUSONE id 	{$$ = make_two_nodes("--", make_leaf($2), empty_node());}
 
+loop_i_dec: TYPE_INT id EQUAL DEC_INT 	{$$ = make_three_nodes("INT", make_leaf("="), make_leaf($2), make_leaf("--"));}
+			|id EQUAL exp 			{$$ = make_two_nodes("=", make_leaf($1), make_leaf("--"));}
+			|id 						{$$ = make_leaf($1);}
 
-return:		RETURN literal EOS {printf("RETURN-----\n");}
-			|;
+return:		RETURN literal EOS {$$ = make_two_nodes("RETURN", make_leaf($2), empty_node());}
 
-loop:		WHILE LP bool_statment RP SCB body ECB {printf("i'm while loop\n");}
-			|FOR LP loop_body EOS bool_statment EOS inc_dec RP SCB body ECB {printf("i'm FOR loop\n");}
-			|DO SCB body ECB WHILE LP bool_statment RP EOS {printf("i'm DO WHILE loop\n");}
-
-loop_body:	type ID EQUAL literal
-			|ID EQUAL literal
-			|ID
-
-inc_dec:	ID PLUSONE {printf("i++\n");}
-			|PLUSONE ID {printf("++i\n");}
-			|ID MINUSONE {printf("i--\n");}
-			|MINUSONE ID {printf("--i\n");}
-
-comments:	COMMENTS
-			|;
-
-type_string:	TYPE_STRING ID BSI NUM ESI type_string {printf("type string 1111\n");}
-				|COMMA ID BSI NUM ESI type_string {printf("type string 22222\n");}
-				|;
 %%
 
 #include "lex.yy.c"
-main() {return yyparse();}
+int main() {return yyparse();}
+
+int tab_count = -1;
+int test_count = 1;
+
+void printTabs(){
+	int i;
+	for(i=0; i < tab_count; i++){
+		printf("    ");	
+	}
+}
+
+int printTree(node* tree)
+{	
+	/*
+	int sons = 0;
+	if(tree->son1) sons++;
+	if(tree->son2) sons++;
+	if(tree->son3) sons++;
+	printf("I have %d sons.    ", sons);
+	sons = 0;
+
+	printf("Number    %d    token is :    %s\n", test_count, tree->token);
+	test_count++;
+	if(tree->son1)printTree(tree->son1);
+	if(tree->son2)printTree(tree->son2);
+	if(tree->son3)printTree(tree->son3);
+	*/
+	tab_count++;
+	
+
+	if(strcmp(tree->token, "") == 0){
+		tab_count--;}
+	else if(tree->son1 != NULL){
+		printTabs();
+		printf("(%s\n",tree->token);
+	}
+	
+	else{
+		printTabs();
+		printf("(%s)\n",tree->token);
+	}
+	
+	if(tree->son1)printTree(tree->son1);
+	if(tree->son2)printTree(tree->son2);
+	if(tree->son3)printTree(tree->son3);
+	if(tree->son4)printTree(tree->son4);
+
+
+	if(strcmp(tree->token, "") == 0){
+		tab_count++;}
+	else if((tree->son1 != NULL || tree->son2 != NULL) && (tree->token != "")){
+		printTabs();
+		printf(")\n");
+	}
+
+	tab_count--;
+
+	
+	return 0;
+	
+}
+
+struct node* make_leaf(char* token){
+	node* new_node = (node*)malloc(sizeof(node));
+	char* value;
+
+	if(token){
+		value = (char*)malloc(sizeof(token)+1);
+		value[sizeof(token)] = '\0';
+		strcpy(value,token);
+	}
+	else{
+		value = (char*)malloc(1);
+		strcpy(value,"");
+	}
+	new_node->son1 = NULL;
+	new_node->son2 = NULL;
+	new_node->son3 = NULL;
+	new_node->son4 = NULL;
+	new_node->token = value;
+}
+
+struct node* make_two_nodes(char* token, node* son1, node *son2)
+{
+	node* new_node = make_leaf(token);
+	new_node->son1 = son1;
+	new_node->son2 = son2;
+	return new_node;
+}
+
+struct node* make_three_nodes(char* token, node* son1, node* son2, node* son3)
+{
+	node* new_node = make_leaf(token);
+	new_node->son1 = son1;
+	new_node->son2 = son2;
+	new_node->son3 = son3;
+	return new_node;
+}
+
+struct node* make_four_nodes(char* token, node* son1, node* son2, node* son3, node* son4)
+{
+	node* new_node = make_leaf(token);
+	new_node->son1 = son1;
+	new_node->son2 = son2;
+	new_node->son3 = son3;
+	new_node->son4 = son4;
+	return new_node;
+}
+
+char* toString(char* token){
+	char* value;
+	if (token){
+		value = (char*)malloc(sizeof(token)+1);
+		value[sizeof(token)] = '\0';
+		strcpy(value,token);
+	}
+	else{
+		value = (char*)malloc(1);
+		strcpy(value,"");
+	}
+	return value;
+}
+
+node* empty_node(){
+	node* new_node = NULL;
+	return new_node;
+
+}
+
+
+void openTag(){
+	printf("(%d)" , tab_count);	
+}
+
+void closeTag(){
+	printf("(/%d)" , tab_count);	
+}
+
+
 
 int yyerror(){
  	fflush(stdout);
  	fprintf(stderr, "------------------------------------------------------\nError located in line: %d\n", yylineno);
 	fprintf(stderr, "The parser can not accept: \" %s \" .\n",yytext);
 	return 0;
-}
-
-
-int yywrap(){
-	return 1;
 }

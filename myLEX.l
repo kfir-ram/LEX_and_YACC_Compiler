@@ -1,16 +1,19 @@
  //this file was made by:
  //Kfir Rahamim 203426721
- //Hen Dahan 312585953	
+ //Hen Dahan 312585953	\*\*[a-zA-Z]+[a-zA-Z0-9_]*	{return ILLEGAL_POINTER;}
  //Bar Piglanski 204590384
 %{
-extern int yylineno;
+	#include <stdio.h>
+	#include <stdlib.h>
+	int yyerror();
+	extern int yyval, yylineno;
 %}
 %option yylineno
 %%
-\/\*.*[\n]*.*\*\/		{return COMMENTS;}
-\/\/		{return ILLEGAL_COMMENT;}
+\/\*(.*[\n]*.*)*\*\/		{;}
 ";"			{return EOS;}//End Of Statement
 "function"	{return FUNCTION;}
+"main"		{return MAIN;}
 "void"		{return TYPE_VOID;}
 "int"		{return TYPE_INT;}
 "real"		{return TYPE_REAL;}
@@ -54,24 +57,17 @@ extern int yylineno;
 ","			{return COMMA;}
 "["			{return BSI;}//Begin String Index
 "]"			{return ESI;}//End String Index
-"|"			{return DLOS;}//Declared Lengh Of String |s|
+"|"			{return LENGTH;}//Declared Lengh Of String |s|
 
-[1-9][0-9]*		{yylval=atoi(yytext);return NUM;}
 [a-zA-Z]+[a-zA-Z0-9_]*		{return ID;}
 
-\*\*[a-zA-Z]+[a-zA-Z0-9_]*	{return ILLEGAL_POINTER;}
-\*[a-zA-Z]+[a-zA-Z0-9_]*	{return POINTER;}
-
-\'[a-z]\'	{return CHAR_lowercase;}//not shore need a check!!!!
-\'[A-Z]\'	{return CHAR_uppercase;}//not shore need a check!!!!
+\'[a-z]\'	{return CHAR_lowercase;}//need to check.
+\'[A-Z]\'	{return CHAR_uppercase;}//need to check.
 \'.\'		{return CHAR;}
 
-\"(.*["]|["].*|.*["].*)+\"	{return INVALID_STRING;}
+\"(.*["]|["].*|.*["].*)+\"	{;} //invalid string
 \".*\"		{return STRING;}
 \"\"		{return EMPTY_STRING;}
-
-
-
 
 [-]?[1-9][0-9]*|0	{return DEC_INT;}
 (0x|0X)[0-9ABCDEF]+	{return HEX_INT;}
@@ -81,3 +77,7 @@ extern int yylineno;
 [ \t\n]			;//ignores tab and spaces.
 .				return yytext[0];
 %%
+
+int yywrap(void) {
+    return 1;
+}

@@ -4,7 +4,7 @@ x = x + f;
 	if (x>y) { 
 x = y + f;
 while (X != y)
-	u = 8;
+	{u = 8;}
 }
 }
 else {
@@ -14,35 +14,34 @@ z = f;
 }
 }
 function char goo(){
-return ‘a’;
+	return 'a' ;
 }
 
 
 
-function void foo(int x, y, z; real f){
-var x = 0x01F;
-real u = +.2E4, 4.e-67;
-string a[30], b[100] = “moshe”;
-string str[3] = "hy";
-a[19] = 'f';
-a[4+2] = 'g';
-b[3] = c;
-a = "this is no newline\n";
-a = "";
-i = |b|;
-var char c = ‘a’;
-var bool m = true, n = false, x;
-/* comments */
-var char* x;
-var int x, z;
-/* this is my
-comment */
-var int* y;
-x = 5;
-y = &x;
-x = 6;
- z = *y;
- y = null;
+function void foo(int x, y, z){
+	var int x = 0x01F;
+	var real u = .e-67;
+	string a[30], b[100] = "moshe" ;
+	string str[3] = "hy";
+	a[19] = 'f';
+	a[4+2] = 'g';
+	b[3] = c;
+	a = "this is no newline\n";
+	a = "";
+	i = |b|;
+	var char c = 'a' ;
+	var bool m = true, n = false, x;
+	
+	var char* x;
+	var int x, z;
+	
+	var int* y;
+	x = 5;
+	y = &x;
+	x = 6;
+	 z = *y;
+	 y = null;
 }
 function void goo(int i, j, k) {
 function bool fee(int l, m, n) {
@@ -55,19 +54,20 @@ function int Bar(int i, j, k; bool l, m, n) { return 0; }
 function void Boo(int a, b) {
 	{
 		do {
-			int x  = 5;
+			var int x  = 5;
 			
-		}
-		While (x  ==     4);
+		}while (x  ==  4);
 	}
 }
+
 function int Broo(int a, b, c; bool d, e, f; int g, h) { return 0; }
+
 function void main ()
 {
 if(3 > 2) {
-/*...statements...*/
-i = 5; /* i has been declared above */
-} /* more examples … */
+
+i = 5;
+}
 if(true)
 {
 j = 3;
@@ -77,17 +77,17 @@ k = 4;
 while(true) {
 l = 2; k = l + j;
 }
-if(true) i = 5; if(true) {
+if(true) {i = 5;} if(true) {
 j = 3;
 }
-else x = x -1;  /* May not work in the current part 1 project */
-while(false) x = x + 1;
-for (i=0; i<=10;i=i+2){  /* may not work because exp cant be without white spaces so far */
+else {x = x - 1;}  
+while(false) {x = x + 1;}
+for (i = 0; i <= 10; i = i + 2 ) {  
 	a = a + I;
 }
 }
 
-Function int pointers_Check()
+function int pointers_Check()
 {
 	var int x;
 var int* y;
@@ -101,6 +101,7 @@ y = "foobar";
 x = &y[5]; 
 z = *(x - 5); 
 y = "barfoo";
+pointers_Check();
+var int x = pointers_Check();
+return 2;
 }
-Pointers_Check();
-Int x = Pointers_Check();

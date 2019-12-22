@@ -1,0 +1,12 @@
+function bool func1(){
+	String str1[10]="hello";
+	var int a1;
+	var bool b1=false;
+	var bool b2=true;
+	var char x = 'x';
+	b1=(a==c)||(x!='*');
+	while(b==c){
+		a1=5+2*3;
+	}
+	return b2;
+}
